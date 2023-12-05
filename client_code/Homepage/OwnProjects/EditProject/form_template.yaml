@@ -1,0 +1,52 @@
+container: {type: ColumnPanel}
+components:
+- name: content_panel
+  properties: {col_widths: '{"NBAPAM":10,"XATEUS":50,"VEOYBT":10,"UPHUCE":50,"AZREKF":10,"TFMFAT":50}'}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'JCCCHA,HMCAVX'}
+  components:
+  - name: label_1
+    properties: {text: 'Title:', bold: false}
+    type: Label
+    layout_properties: {grid_position: 'YKICCM,VEOYBT'}
+  - name: title_box
+    properties: {}
+    type: TextBox
+    layout_properties: {grid_position: 'YKICCM,UPHUCE'}
+    data_bindings:
+    - {property: text, code: 'self.item[''title'']', writeback: false}
+  - name: label_2
+    properties: {text: 'Description:'}
+    type: Label
+    layout_properties: {grid_position: 'NNSLXS,NBAPAM'}
+  - name: description_box
+    properties: {auto_expand: true}
+    type: TextArea
+    layout_properties: {grid_position: 'NNSLXS,XATEUS'}
+    data_bindings:
+    - {property: text, code: 'self.item[''description'']', writeback: false}
+  - name: label_3
+    properties: {text: 'Images:'}
+    type: Label
+    layout_properties: {grid_position: 'PNHCEH,AZREKF'}
+  - name: image_uploader
+    properties: {multiple: true, file_types: image/*}
+    type: FileLoader
+    layout_properties: {grid_position: 'PNHCEH,TFMFAT'}
+    data_bindings:
+    - {property: files, code: 'self.item[''images'']', writeback: false}
+  - name: spacer_1
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'NUAZSK,BNAQAI'}
+  - name: cancel_button
+    properties: {text: Cancel}
+    type: Button
+    layout_properties: {grid_position: 'NUAZSK,TMIHUR'}
+    event_bindings: {click: cancel_button_click}
+  - name: save_button
+    properties: {text: Save}
+    type: Button
+    layout_properties: {grid_position: 'NUAZSK,GGZEHN'}
+    event_bindings: {click: save_button_click}
+is_package: true

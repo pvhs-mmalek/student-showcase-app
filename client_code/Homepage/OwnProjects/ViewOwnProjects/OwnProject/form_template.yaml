@@ -12,9 +12,9 @@ components:
     data_bindings:
     - {property: text, code: 'self.item[''title'']', writeback: false}
   - name: description_box
-    properties: {enabled: false, auto_expand: true}
-    type: TextArea
-    layout_properties: {grid_position: 'ZPWDBR,FHFTGW'}
+    properties: {}
+    type: Label
+    layout_properties: {grid_position: 'YVONGG,CYRVWY'}
     data_bindings:
     - {property: text, code: 'self.item[''description'']', writeback: false}
   - name: spacer_1
@@ -25,8 +25,9 @@ components:
     properties: {text: Delete}
     type: Button
     layout_properties: {grid_position: 'PHJFWP,AUYDBZ'}
-  - name: save_button
-    properties: {text: Save}
+  - name: edit_button
+    properties: {text: Edit}
     type: Button
     layout_properties: {grid_position: 'PHJFWP,DAQCBC'}
+    event_bindings: {click: edit_button_click}
 is_package: true

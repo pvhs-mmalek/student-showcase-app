@@ -6,7 +6,6 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from ... import Global
-from ...ProjectView import ProjectView
 from .ViewOwnProjects import ViewOwnProjects
 
 class OwnProjects(OwnProjectsTemplate):
@@ -15,6 +14,8 @@ class OwnProjects(OwnProjectsTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    Global.OwnProjects_content_panel = self.content_panel
+    self.show_own_projects()
 
   def show_own_projects(self):
     form = ViewOwnProjects()

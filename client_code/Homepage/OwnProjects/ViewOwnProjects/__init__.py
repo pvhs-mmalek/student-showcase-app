@@ -5,7 +5,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-from .NewProjectAlert import NewProjectAlert
+from .... import Global
 
 
 class ViewOwnProjects(ViewOwnProjectsTemplate):
@@ -18,5 +18,9 @@ class ViewOwnProjects(ViewOwnProjectsTemplate):
 
   def new_project_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    save_clicked = alert(content = NewProjectAlert(), buttons=[('')])
+    save_clicked = alert(title='Create new project?', buttons=[('Cancel', False), ('Confirm', True)])
+    if save_clicked:
+      anvil.server.call('add_new_project')
+      Global.set_panel(Global.OwnProjects_content_panel, ViewOwnProjects())
+      
     

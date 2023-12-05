@@ -58,5 +58,17 @@ db_schema:
     - name: email
       admin_ui: {width: 200, order: 2}
       type: string
+    - name: images
+      admin_ui: {width: 200, order: 3}
+      type: link_multiple
+      target: images
     title: Projects
+  images:
+    client: none
+    server: full
+    columns:
+    - name: image
+      admin_ui: {width: 200, order: 0}
+      type: media
+    title: Images
 renamed: true

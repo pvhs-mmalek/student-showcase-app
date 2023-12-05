@@ -6,6 +6,7 @@ from anvil.tables import app_tables
 import anvil.users
 import anvil.server
 from .. import Global
+from .OwnProjects import OwnProjects
 
 class Homepage(HomepageTemplate):
   def __init__(self, **properties):
@@ -24,4 +25,9 @@ class Homepage(HomepageTemplate):
     anvil.users.login_with_form()
     anvil.server.call('check_new_user')
 
+  def own_projects_button_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    form = OwnProjects()
+    self.content_panel.clear()
+    self.content_panel.add_component(form)
     

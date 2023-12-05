@@ -5,6 +5,7 @@ import anvil.users
 import anvil.server
 
 homepage_content_panel = None
+OwnProjects_content_panel = None
 
 def set_panel(panel, form):
   panel.clear()
