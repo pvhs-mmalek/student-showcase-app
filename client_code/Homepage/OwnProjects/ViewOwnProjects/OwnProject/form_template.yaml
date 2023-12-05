@@ -1,0 +1,32 @@
+container: {type: ColumnPanel}
+components:
+- name: content_panel
+  properties: {role: elevated-card}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'GEYQXS,KLFCKT'}
+  components:
+  - name: title_box
+    properties: {}
+    type: Label
+    layout_properties: {grid_position: 'MGEBNJ,KUTFBU'}
+    data_bindings:
+    - {property: text, code: 'self.item[''title'']', writeback: false}
+  - name: description_box
+    properties: {enabled: false, auto_expand: true}
+    type: TextArea
+    layout_properties: {grid_position: 'ZPWDBR,FHFTGW'}
+    data_bindings:
+    - {property: text, code: 'self.item[''description'']', writeback: false}
+  - name: spacer_1
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'PHJFWP,BYCGYY'}
+  - name: delete_button
+    properties: {text: Delete}
+    type: Button
+    layout_properties: {grid_position: 'PHJFWP,AUYDBZ'}
+  - name: save_button
+    properties: {text: Save}
+    type: Button
+    layout_properties: {grid_position: 'PHJFWP,DAQCBC'}
+is_package: true

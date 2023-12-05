@@ -1,0 +1,28 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components: []
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+- name: column_panel_1
+  properties: {}
+  type: ColumnPanel
+  layout_properties: {slot: left-nav}
+  components:
+  - name: own_prjects_button
+    properties: {text: My Projects}
+    type: Link
+    layout_properties: {grid_position: 'GSLTAC,LWEOPQ'}
+  - name: logout_button
+    properties: {text: Logout}
+    type: Link
+    layout_properties: {grid_position: 'EYZFEV,UACZAU'}
+    event_bindings: {click: logout_button_click}
