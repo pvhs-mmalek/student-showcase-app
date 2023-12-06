@@ -5,6 +5,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from .. import Global
 
 class ImageButton(ImageButtonTemplate):
   def __init__(self, **properties):
@@ -12,32 +13,27 @@ class ImageButton(ImageButtonTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    print(self.index)
-    print(self.image)
-    print(self.item)
-    if self.index > 0:
-      self.prev_image_button.visible = True
-      self.prev_image_button.enabled = True
-    else:
-      self.prev_image_button.visible = False
-      self.prev_image_button.enabled = False
-    if self.index == len(self.image_list):
-      self.next_image_button.visible = True
-      self.next_image_button.enabled = True
-    else:
-      self.next_image_button.visible = False
-      self.next_image_button.enabled = False
+    img_list = anvil.server.call('get_project_images', self.item)
+    img = img_list[Global.own_image_index]
 
   def prev_image_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.index-=1
-    self.project_image.source = self.image_list[self.index]
-    self.refresh_data_bindings()
-
-  def next_image_button_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    self.index+=1
-    self.project_image.source = self.image_list[self.index]
-    self.refresh_data_bindings()
-
+    Global.own_image_index -= 1
+    if Global.own_image_index == 0:
+      self.prev_image_button.enabled = False
+      self.prev_image_button.visible = False
+    else:
+      self.prev_image_button.enabled = True
+      self.prev_image_button.visible = True
+    Global.own_img_list = anvil.server.call('get_project_images', self.item)
+    Global.own_img = Global.own_img_listimg_list[Global.own_image_index]
+    
+def check_image_buttons():
+  if Global.own_image_index == 0:
+    self.prev_image_button.enabled = False
+    self.prev_image_button.visible = False
+  else:
+    self.prev_image_button.enabled = True
+    self.prev_image_button.visible = True
+  if Global.own_image_index == Global.own_img_list
   

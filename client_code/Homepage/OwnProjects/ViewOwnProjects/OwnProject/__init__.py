@@ -7,7 +7,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from ...EditProject import EditProject
 from ..... import Global
-from .....ImageButton import ImageButton
+
 
 class OwnProject(OwnProjectTemplate):
   def __init__(self, **properties):
@@ -15,11 +15,12 @@ class OwnProject(OwnProjectTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    Global.own_image_index = 0
     anvil.server.call('check_project_images', self.item)
     if len(self.item['images']) > 0:
       self.image_panel.clear()
-      img_list = anvil.server.call()
-      self.image_panel.add_component(ImageButton(item=img_list))
+      
+      self.image_panel.add_component(Image(source=img))
     else:
       self.image_panel.clear()
     
@@ -29,4 +30,6 @@ class OwnProject(OwnProjectTemplate):
     form = EditProject(item=self.item)
     Global.set_panel(Global.OwnProjects_content_panel, form)
 
-
+# def next_image_button_click(self):
+#   Global.own_image_index += 0
+#   if Global.own_image_index ==
