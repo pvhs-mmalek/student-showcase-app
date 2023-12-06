@@ -31,7 +31,21 @@ def update_project(project, project_dict):
     raise Exception('Project does not exist')
 
 @anvil.server.callable
+def update_project(project, project_dict, images):
+  if app_tables.projects.has_row(project):
+    project.update(**project_dict)
+    for i in images:
+      if not app_tables.images.has_row(i):
+        project['images'] += [app_tables.images.add_row(image=i)]
+  else:
+    raise Exception('Project does not exist')
+
+@anvil.server.callable
 def check_project_images(project):
   if project['images'] == None:
     project['images'] = []
+
+@anvil.server.callable
+def test_get_image():
+  return app_tables.images.search()
 

@@ -22,8 +22,9 @@ class EditProject(EditProjectTemplate):
     project = dict(self.item)
     project['title'] = self.title_box.text
     project['description'] = self.description_box.text
-    project['images'] = self.image_uploader.files
-    anvil.server.call('update_project', self.item, project)
+    images = self.image_uploader.files
+    print(self.image_uploader.file)
+    anvil.server.call('update_project', self.item, project, images)
     Global.set_panel(Global.OwnProjects_content_panel, ViewOwnProjects())
     
 

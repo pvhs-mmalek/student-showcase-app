@@ -1,7 +1,7 @@
 properties:
 - {name: index, type: number, important: true, default_binding_prop: true, default_value: 0,
   description: index of image list}
-- {name: image, type: uri, important: true, accept: image/*, default_value: 'self.image_list[self.index]',
+- {name: image, type: uri, important: true, accept: image/*, default_value: null,
   description: ImageButton Image}
 - {name: image_list, type: object, important: true, description: list of images}
 is_package: true
@@ -18,8 +18,7 @@ components:
     properties: {}
     type: Image
     layout_properties: {grid_position: 'AFAXXF,WVILPR'}
-    data_bindings:
-    - {property: source, code: self.image, writeback: false}
+    data_bindings: []
   - name: prev_image_button
     properties: {text: '', icon: 'fa:arrow-circle-left', visible: false, enabled: false}
     type: Button
