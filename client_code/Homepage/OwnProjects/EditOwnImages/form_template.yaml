@@ -4,5 +4,17 @@ components:
   properties: {}
   type: ColumnPanel
   layout_properties: {grid_position: 'UKEUQB,YMPNMC'}
-  components: []
+  components:
+  - name: image_1
+    properties: {}
+    type: Image
+    layout_properties: {grid_position: 'SSCMMQ,MVNCDM'}
+  - name: label_1
+    properties: {text: Change Image}
+    type: Label
+    layout_properties: {grid_position: 'SSCMMQ,KWFGNV PCPTMO,JMVIAK'}
+  - name: file_loader_1
+    properties: {}
+    type: FileLoader
+    layout_properties: {grid_position: 'SSCMMQ,KWFGNV BTOZSN,ISWRXH'}
 is_package: true
