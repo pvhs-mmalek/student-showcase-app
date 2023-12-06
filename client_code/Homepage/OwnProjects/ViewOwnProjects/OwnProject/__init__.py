@@ -7,7 +7,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from ...EditProject import EditProject
 from ..... import Global
-
+from .....ImageButton import ImageButton
 
 class OwnProject(OwnProjectTemplate):
   def __init__(self, **properties):
@@ -19,8 +19,7 @@ class OwnProject(OwnProjectTemplate):
     anvil.server.call('check_project_images', self.item)
     if len(self.item['images']) > 0:
       self.image_panel.clear()
-      
-      self.image_panel.add_component(Image(source=img))
+      self.image_panel.add_component(ImageButton(item=self.item))
     else:
       self.image_panel.clear()
     

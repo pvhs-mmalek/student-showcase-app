@@ -4,8 +4,7 @@ components:
   properties: {}
   type: Image
   layout_properties: {grid_position: 'HFMWJM,LTTYES'}
-  data_bindings:
-  - {property: source, code: self.item, writeback: false}
+  data_bindings: []
 - name: prev_image_button
   properties: {text: '', icon: 'fa:arrow-circle-left'}
   type: Button
@@ -15,4 +14,6 @@ components:
   properties: {text: '', icon: 'fa:arrow-circle-right'}
   type: Button
   layout_properties: {grid_position: 'CEUYRL,VMAQXJ'}
+  event_bindings: {click: next_image_button_click}
 is_package: true
+custom_component: false
