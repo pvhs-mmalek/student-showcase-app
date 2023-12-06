@@ -30,4 +30,8 @@ def update_project(project, project_dict):
   else:
     raise Exception('Project does not exist')
 
+@anvil.server.callable
+def check_project_images(project):
+  if project['images'] == None:
+    project['images'] = []
 

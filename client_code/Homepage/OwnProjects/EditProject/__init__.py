@@ -14,6 +14,8 @@ class EditProject(EditProjectTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    for image in self.item['images']:
+      self.image_uploader.file += image
 
   def save_button_click(self, **event_args):
     """This method is called when the button is clicked"""

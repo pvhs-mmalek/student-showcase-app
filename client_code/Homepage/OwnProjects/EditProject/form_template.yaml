@@ -33,8 +33,7 @@ components:
     properties: {multiple: true, file_types: image/*}
     type: FileLoader
     layout_properties: {grid_position: 'PNHCEH,TFMFAT'}
-    data_bindings:
-    - {property: files, code: 'self.item[''images'']', writeback: false}
+    data_bindings: []
   - name: spacer_1
     properties: {height: 32}
     type: Spacer
