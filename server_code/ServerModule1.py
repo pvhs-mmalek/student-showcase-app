@@ -46,6 +46,8 @@ def check_project_images(project):
     project['images'] = []
 
 @anvil.server.callable
-def test_get_image():
-  return app_tables.images.search()
+def test_get_image(images):
+  img_list = []
+  for img in self.item['images']:
+    img_list += [img['image']]
 

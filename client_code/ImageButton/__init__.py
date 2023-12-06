@@ -12,13 +12,9 @@ class ImageButton(ImageButtonTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.image_list = anvil.server.call('test_get_image')
-    # for img in self.item:
-    #   self.image_list += [img['image']]
-    self.image = self.image_list[self.index]['image']
     print(self.index)
     print(self.image)
-    print(self.image_list)
+    print(self.item)
     if self.index > 0:
       self.prev_image_button.visible = True
       self.prev_image_button.enabled = True

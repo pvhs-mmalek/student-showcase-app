@@ -18,7 +18,8 @@ class OwnProject(OwnProjectTemplate):
     anvil.server.call('check_project_images', self.item)
     if len(self.item['images']) > 0:
       self.image_panel.clear()
-      self.image_panel.add_component(ImageButton(item=self.item['images']))
+      img_list = anvil.server.call()
+      self.image_panel.add_component(ImageButton(item=img_list))
     else:
       self.image_panel.clear()
     
