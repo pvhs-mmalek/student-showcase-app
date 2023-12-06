@@ -35,5 +35,5 @@ def check_image_buttons():
   else:
     self.prev_image_button.enabled = True
     self.prev_image_button.visible = True
-  if Global.own_image_index == Global.own_img_list
+  if Global.own_image_index == len(Global.own_img_list)
   
