@@ -5,6 +5,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from ..... import Global
 
 class EditOwnImages(EditOwnImagesTemplate):
   def __init__(self, **properties):
@@ -18,4 +19,10 @@ class EditOwnImages(EditOwnImagesTemplate):
     """This method is called when a new file is loaded into this FileLoader"""
     self.item = self.change_project_image_button.file
     self.project_image.source = self.item
+
+  def delete_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    Global.edited_image_list.remove(self.item)
+    Global.set_panel(Global.edit_image_panel, Global.edited_image_list)
+    
     
