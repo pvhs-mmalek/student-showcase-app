@@ -13,7 +13,7 @@ class EditOwnImages(EditOwnImagesTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    # self.project_image.source = self.item
+    self.project_image.source = self.item
 
   def change_project_image_button_change(self, file, **event_args):
     """This method is called when a new file is loaded into this FileLoader"""

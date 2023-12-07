@@ -16,7 +16,4 @@ def set_panel(panel, form):
   panel.clear()
   panel.add_component(form)
 
-def update_own_image(item):
-  own_img_list = anvil.server.call('get_project_images', self.item)
-  own_img = img_list[own_image_index]
 

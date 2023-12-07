@@ -16,8 +16,6 @@ class EditProject(EditProjectTemplate):
 
     # Any code you write here will run before the form opens.
     Global.edited_image_list = []
-    Global.edited_image_list = anvil.server.call('get_project_images', self.item)
-    print(anvil.server.call('get_project_images', self.item))
     Global.edit_image_panel = self.edit_images_panel
     self.edit_images_panel.clear()
     self.edit_images_panel.add_component(RepeatingPanel(item_template=EditOwnImages, items=Global.edited_image_list))
@@ -27,8 +25,7 @@ class EditProject(EditProjectTemplate):
     project = dict(self.item)
     project['title'] = self.title_box.text
     project['description'] = self.description_box.text
-    print(Global.edited_image_list)
-    anvil.server.call('update_project', self.item, project, Global.edited_image_list)
+    anvil.server.call('update_project', self.item, project)
     
     Global.set_panel(Global.OwnProjects_content_panel, ViewOwnProjects())
     
@@ -39,5 +36,5 @@ class EditProject(EditProjectTemplate):
 
   def image_uploader_change(self, file, **event_args):
     """This method is called when a new file is loaded into this FileLoader"""
-    print(Global.edited_image_list)
     Global.edited_image_list.append(file)
+    Global.set_panel(self.edit_images_panel, Global.edited_image_list)
