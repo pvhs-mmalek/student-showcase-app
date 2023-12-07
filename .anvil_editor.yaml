@@ -13,5 +13,7 @@ unique_ids:
   server_modules:
     ServerModule1: '1701741778128295725938785.1932'
   assets:
+    Folder2/.gitkeep: '1701925078640853120837301.1321'
     standard-page.html: WWJEBFJ7G2YPMWF3SERO4VPWVV2JPBNK
     theme.css: PSSIHEFZZLAD4F2HVQOSJWWCAQHFPYZV
+    Folder1/.gitkeep: '1701925061400982613153103.2461'
