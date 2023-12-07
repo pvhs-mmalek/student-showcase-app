@@ -34,8 +34,13 @@ def update_project(project, project_dict):
 def update_project(project, project_dict, image_list):
   if app_tables.projects.has_row(project):
     project.update(**project_dict)
-    for i in image_list:
-      project['images'] += [app_tables.images.add_row(image=i)]
+    for i in project['images']:
+      i.delete()
+    project['images'] = []
+    for b in image_list:
+      print(project['images'])
+      print(b)
+      project['images'] += [app_tables.images.add_row(image=b)]
   else:
     raise Exception('Project does not exist')
 
@@ -48,7 +53,7 @@ def check_project_images(project):
 def get_project_images(project):
   img_list = []
   for img in project['images']:
-    img_list += [img['image']]
+    img_list += [img['image'].get_bytes()]
   return img_list
 
 
