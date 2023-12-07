@@ -9,8 +9,6 @@ OwnProjects_content_panel = None
 own_image_index = 0
 own_img_list = []
 own_img = None
-edit_image_panel = None
-edited_image_list = []
 
 def set_panel(panel, form):
   panel.clear()

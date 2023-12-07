@@ -37,4 +37,5 @@ class EditProject(EditProjectTemplate):
   def image_uploader_change(self, file, **event_args):
     """This method is called when a new file is loaded into this FileLoader"""
     Global.edited_image_list.append(file)
+    print(file)
     Global.set_panel(self.edit_images_panel, Global.edited_image_list)
