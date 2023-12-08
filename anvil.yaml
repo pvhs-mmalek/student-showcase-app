@@ -10,6 +10,9 @@ services:
 - source: /runtime/services/anvil/files.yml
   client_config: {}
   server_config: {file_table: files}
+- source: /runtime/services/google.yml
+  client_config: {}
+  server_config: {}
 startup: {type: form, module: Homepage}
 package_name: For_the_love_of_god_please_work
 allow_embedding: false
