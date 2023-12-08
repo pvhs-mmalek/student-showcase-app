@@ -41,4 +41,9 @@ def update_project(project, project_dict):
   else:
     raise Exception('Project does not exist')
 
+@anvil.server.callable
+def add_images_to_user_images(image_list):
+  for img in image_list:
+    
+
 
