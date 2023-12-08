@@ -11,8 +11,58 @@ services:
   client_config: {}
   server_config: {file_table: files}
 - source: /runtime/services/google.yml
-  client_config: {}
-  server_config: {}
+  client_config:
+    app_files:
+    - capabilities: {canEdit: true, canCopy: false}
+      editable: true
+      copyable: false
+      embedLink: https://drive.google.com/embeddedfolderview?id=1CqDxfO7s1INegJ8BRabqymC8Wk7Y6XtO
+      copyRequiresWriterPermission: false
+      python_name: user_images
+      explicitlyTrashed: false
+      lastModifyingUser:
+        displayName: Matt Malek
+        kind: drive#user
+        isAuthenticatedUser: true
+        permissionId: '13954696392590363350'
+        emailAddress: mmalek4417@gmail.com
+        picture: {url: 'https://lh3.googleusercontent.com/a/default-user=s64'}
+      shared: false
+      createdDate: '2023-12-08T02:07:08.314Z'
+      id: 1CqDxfO7s1INegJ8BRabqymC8Wk7Y6XtO
+      owners:
+      - displayName: Matt Malek
+        kind: drive#user
+        isAuthenticatedUser: true
+        permissionId: '13954696392590363350'
+        emailAddress: mmalek4417@gmail.com
+        picture: {url: 'https://lh3.googleusercontent.com/a/default-user=s64'}
+      markedViewedByMeDate: '1970-01-01T00:00:00.000Z'
+      spaces: [drive]
+      parents:
+      - {selfLink: 'https://www.googleapis.com/drive/v2/files/1CqDxfO7s1INegJ8BRabqymC8Wk7Y6XtO/parents/0ALgsN0pFA0QJUk9PVA',
+        id: 0ALgsN0pFA0QJUk9PVA, isRoot: true, kind: drive#parentReference, parentLink: 'https://www.googleapis.com/drive/v2/files/0ALgsN0pFA0QJUk9PVA'}
+      labels: {viewed: true, restricted: false, starred: false, hidden: false, trashed: false}
+      iconLink: https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.google-apps.folder
+      permission: noclient
+      selfLink: https://www.googleapis.com/drive/v2/files/1CqDxfO7s1INegJ8BRabqymC8Wk7Y6XtO
+      lastViewedByMeDate: '2023-12-08T02:07:08.314Z'
+      userPermission: {id: me, type: user, role: owner, kind: drive#permission, selfLink: 'https://www.googleapis.com/drive/v2/files/1CqDxfO7s1INegJ8BRabqymC8Wk7Y6XtO/permissions/me',
+        etag: '"W6UJCT4tFeFBU_A3BFMMsal3mxY"', pendingOwner: false}
+      lastModifyingUserName: Matt Malek
+      etag: '"MTcwMjAwMTIyODMxNA"'
+      kind: drive#file
+      modifiedByMeDate: '2023-12-08T02:07:08.314Z'
+      title: user_images
+      version: '1'
+      appDataContents: false
+      writersCanShare: true
+      alternateLink: https://drive.google.com/drive/folders/1CqDxfO7s1INegJ8BRabqymC8Wk7Y6XtO
+      mimeType: application/vnd.google-apps.folder
+      modifiedDate: '2023-12-08T02:07:08.314Z'
+      quotaBytesUsed: '0'
+      ownerNames: [Matt Malek]
+  server_config: {enc_delegation_refresh_token: /fgsZ2ISmOtICwLeli0g6o6T2wShFh62XUJnJIdMvQOYEtk5eDCnXYS7bq482HfcJs6QKRg8i9UGkDSCWdCQ97dANQk66NnTyUxK+DnzvtnvcOc4KY1YAcCTOMYWcHHRu/2DnOFQQxDuSfPoBK4wPbmg+g9YQ3UAG/cbTlGRsfH0jaIZLmi3eUpYYJphLajQgBiGGftIHQ7nSDwqQzuGA9LJ80uflbwhVc2ybzUZMhLdhGd5qqppssgrGushqtZbT4XbFF4UhVo//vONDqE9VMDwRjwhUucdjpgSZ7nrYYBn8hyC6HshUMKejKh1tg==}
 startup: {type: form, module: Homepage}
 package_name: For_the_love_of_god_please_work
 allow_embedding: false
