@@ -10,7 +10,7 @@ homepage_content_panel = None
 OwnProjects_content_panel = None
 own_image_index = 0
 own_img_list = []
-own_img = None
+
 
 def set_panel(panel, form):
   panel.clear()

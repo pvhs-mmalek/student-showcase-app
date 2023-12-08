@@ -17,10 +17,9 @@ class EditProject(EditProjectTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    Global.edited_image_list = []
     Global.edit_image_panel = self.edit_images_panel
     self.edit_images_panel.clear()
-    self.edit_images_panel.add_component(RepeatingPanel(item_template=EditOwnImages, items=Global.edited_image_list))
+    self.edit_images_panel.add_component(RepeatingPanel(item_template=EditOwnImages, items=anvil.server.call('get_project_images',self.item)))
 
   def save_button_click(self, **event_args):
     """This method is called when the button is clicked"""

@@ -33,6 +33,4 @@ class Homepage(HomepageTemplate):
     self.content_panel.clear()
     self.content_panel.add_component(form)
 
-
-
-    
+ 
