@@ -38,6 +38,5 @@ class EditProject(EditProjectTemplate):
 
   def image_uploader_change(self, file, **event_args):
     """This method is called when a new file is loaded into this FileLoader"""
-    Global.edited_image_list.append(file)
-    print(file)
-    Global.set_panel(self.edit_images_panel, Global.edited_image_list)
+    anvil.server.call('add_project_image', self.item, file)
+    Global.set_panel(self.edit_images_panel, RepeatingPanel(item_template=EditOwnImages, items=anvil.server.call('get_project_images', Global.current_project)))

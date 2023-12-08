@@ -54,7 +54,7 @@ def get_project_images(project):
   return image_files
 
 @anvil.server.callable
-def add_project_images(project, image):
+def add_project_image(project, image):
   image = app_files.user_images.create_file(image.name, image)
   project['file_ids'] += [image.id]
 
@@ -66,8 +66,13 @@ def add_project_images(project, image_list):
 
 @anvil.server.callable
 def delete_project_image(project, image_id):
-  app_files.user_images.delete(image_id)
+  app_files.user_images.get_by_id(image_id).delete()
   project['file_ids'] = project['file_ids'].remove(image_id)
+
+@anvil.server.callable
+def replace_image_file(project, old_image_id, new_image):
+  delete_project_image(project, old_image_id)
+  add_project_image(project, new_image)
   
 
 
