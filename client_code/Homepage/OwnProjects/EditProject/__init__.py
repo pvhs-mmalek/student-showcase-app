@@ -17,6 +17,7 @@ class EditProject(EditProjectTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    Global.current_project = self.item
     Global.edit_image_panel = self.edit_images_panel
     self.edit_images_panel.clear()
     self.edit_images_panel.add_component(RepeatingPanel(item_template=EditOwnImages, items=anvil.server.call('get_project_images',self.item)))

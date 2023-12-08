@@ -24,7 +24,7 @@ class EditOwnImages(EditOwnImagesTemplate):
 
   def delete_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    Global.edited_image_list.remove(self.item)
+    Global.current_project['']
     Global.set_panel(Global.edit_image_panel, Global.edited_image_list)
     
     
