@@ -18,11 +18,11 @@ class OwnProject(OwnProjectTemplate):
 
     # Any code you write here will run before the form opens.
     Global.own_image_index = 0
-    if len(self.item['files']) > 0:
-      self.image_panel.clear()
-      self.image_panel.add_component(ImageButton(item=self.item))
-    else:
-      self.image_panel.clear()
+    # if len(self.item['files']) > 0:
+    #   self.image_panel.clear()
+    #   self.image_panel.add_component(ImageButton(item=self.item))
+    # else:
+    #   self.image_panel.clear()
     
 
   def edit_button_click(self, **event_args):
