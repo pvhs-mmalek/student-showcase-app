@@ -20,7 +20,9 @@ class EditProject(EditProjectTemplate):
     Global.current_project = self.item
     Global.edit_image_panel = self.edit_images_panel
     self.edit_images_panel.clear()
-    self.edit_images_panel.add_component(RepeatingPanel(item_template=EditOwnImages, items=anvil.server.call('get_project_images',self.item)))
+    if len(self.item['file_ids']) > 0:
+      self.edit_images_panel.add_component(RepeatingPanel(item_template=EditOwnImages, items=self.item['file_ids']))
+    
 
   def save_button_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -39,4 +41,4 @@ class EditProject(EditProjectTemplate):
   def image_uploader_change(self, file, **event_args):
     """This method is called when a new file is loaded into this FileLoader"""
     anvil.server.call('add_project_image', self.item, file)
-    Global.set_panel(self.edit_images_panel, RepeatingPanel(item_template=EditOwnImages, items=anvil.server.call('get_project_images', Global.current_project)))
+    Global.set_panel(self.edit_images_panel, RepeatingPanel(item_template=EditOwnImages, items=self.item['file_ids']))
