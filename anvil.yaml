@@ -61,9 +61,9 @@ services:
       ownerNames: [Matt Malek]
   server_config: {enc_delegation_refresh_token: /fgsZ2ISmOtICwLeli0g6o6T2wShFh62XUJnJIdMvQOYEtk5eDCnXYS7bq482HfcJs6QKRg8i9UGkDSCWdCQ97dANQk66NnTyUxK+DnzvtnvcOc4KY1YAcCTOMYWcHHRu/2DnOFQQxDuSfPoBK4wPbmg+g9YQ3UAG/cbTlGRsfH0jaIZLmi3eUpYYJphLajQgBiGGftIHQ7nSDwqQzuGA9LJ80uflbwhVc2ybzUZMhLdhGd5qqppssgrGushqtZbT4XbFF4UhVo//vONDqE9VMDwRjwhUucdjpgSZ7nrYYBn8hyC6HshUMKejKh1tg==}
 startup: {type: form, module: Homepage}
-package_name: For_the_love_of_god_please_work
+package_name: Student_Showcase_App
 allow_embedding: false
-name: For the love of god please work
+name: Student Showcase App
 runtime_options:
   version: 2
   client_version: '3'
