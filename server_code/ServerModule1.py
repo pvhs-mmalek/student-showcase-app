@@ -11,11 +11,26 @@ def check_new_user():
   current_user = anvil.users.get_user()
   if current_user['projects'] == None:
     current_user['projects'] = []
+  if current_user['profile'] == None:
+    current_user['profile'] = []
 
 @anvil.server.callable
 def get_own_projects():
   current_user = anvil.users.get_user()
   return current_user['projects']
+
+@anvil.server.callable
+def get_projects_from_email(user_email):
+  return app_tables.projects.search(email=user_email)
+
+@anvil.server.callable
+def get_profile_by_email(user_email):
+  return app_tables.profiles.search(email=user_email)
+
+@anvil.server.callable
+def get_own_profile():
+  current_user = anvil.users.get_user()
+  return current_user['profile']
 
 @anvil.server.callable
 def add_new_project():
@@ -107,6 +122,11 @@ def replace_image_file(project, old_image_id, new_image):
   delete_project_image(project, old_image_id)
   add_project_image(project, new_image)
   
-  
+@anvil.server.callable
+def update_profile(profile, profile_dict):
+  if app_tables.profiles.has_row(profile):
+    profile.update(**profile_dict)
+  else:
+    raise Exception('Profile does not exist')
 
 

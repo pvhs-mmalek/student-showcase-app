@@ -1,0 +1,20 @@
+container: {type: ColumnPanel}
+components:
+- name: project_panel
+  properties: {role: elevated-card}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'AYWOUG,OAORLQ'}
+  components:
+  - name: title_box
+    properties: {}
+    type: Label
+    layout_properties: {grid_position: 'ZOYIZV,MIKKGF'}
+  - name: description_box
+    properties: {}
+    type: TextArea
+    layout_properties: {grid_position: 'YJYOTY,GEIPDC'}
+  - name: image_panel
+    properties: {}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'NCACJF,UZJNXH'}
+is_package: true

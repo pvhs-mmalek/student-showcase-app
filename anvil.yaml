@@ -100,6 +100,10 @@ db_schema:
       admin_ui: {width: 200, order: 7}
       type: link_multiple
       target: projects
+    - name: profile
+      admin_ui: {width: 200, order: 8}
+      type: link_single
+      target: profiles
     title: Users
   projects:
     client: none
@@ -118,7 +122,7 @@ db_schema:
       admin_ui: {order: 3, width: 200}
       type: simpleObject
     title: Projects
-  profile:
+  profiles:
     client: none
     server: full
     columns:
@@ -137,5 +141,38 @@ db_schema:
     - name: about
       admin_ui: {width: 200, order: 4}
       type: string
-    title: Profile
+    - name: award
+      admin_ui: {width: 200, order: 5}
+      type: simpleObject
+    - name: profile_image
+      admin_ui: {order: 6, width: 200}
+      type: string
+    - name: school
+      admin_ui: {width: 200, order: 7}
+      type: string
+    - name: grade
+      admin_ui: {width: 200, order: 8}
+      type: number
+    - name: age
+      admin_ui: {width: 200, order: 9}
+      type: number
+    - name: location
+      admin_ui: {width: 200, order: 10}
+      type: string
+    - name: sex
+      admin_ui: {width: 200, order: 11}
+      type: string
+    - name: project_title
+      admin_ui: {order: 12, width: 200}
+      type: string
+    - name: project_desc
+      admin_ui: {width: 200, order: 13}
+      type: string
+    - name: project_image
+      admin_ui: {width: 200, order: 14}
+      type: string
+    - name: email
+      admin_ui: {width: 200, order: 15}
+      type: string
+    title: Profiles
 renamed: true

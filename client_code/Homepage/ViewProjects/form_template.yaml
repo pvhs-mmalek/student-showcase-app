@@ -1,0 +1,17 @@
+container: {type: ColumnPanel}
+components:
+- name: view_user_button
+  properties: {text: View User Profile, role: filled-button}
+  type: Button
+  layout_properties: {grid_position: 'UKVSCG,LEGUOW'}
+  event_bindings: {click: view_user_button_click}
+- name: view_projects_panel
+  properties: {}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'HBOKBK,VVKUVY'}
+  components:
+  - name: repeating_project_panel
+    properties: {item_template: Homepage.ViewProjects.UserProject}
+    type: RepeatingPanel
+    layout_properties: {grid_position: 'QCBWDN,ADHXKD'}
+is_package: true
