@@ -21,9 +21,9 @@ def get_own_projects():
 def add_new_project():
   current_user = anvil.users.get_user()
   if current_user['projects'] == []:
-    current_user['projects'] = [app_tables.projects.add_row(email=current_user['email'], filenames=[])]
+    current_user['projects'] = [app_tables.projects.add_row(email=current_user['email'], file_ids=[])]
   else:
-    current_user['projects'] += [app_tables.projects.add_row(email=current_user['email'], filenames=[])]
+    current_user['projects'] += [app_tables.projects.add_row(email=current_user['email'], file_ids=[])]
 
 @anvil.server.callable
 def update_project(project, project_dict):
@@ -33,11 +33,12 @@ def update_project(project, project_dict):
     raise Exception('Project does not exist')
 
 @anvil.server.callable
-def update_project(project, project_dict):
+def delete_project(project):
+  current_user = anvil.users.get_user()
   if app_tables.projects.has_row(project):
-    project.update(**project_dict)
+    
   else:
-    raise Exception('Project does not exist')
+    raise Exception('project does not exist')
 
 @anvil.server.callable
 def get_images(image_id_list):
@@ -78,6 +79,7 @@ def delete_project_image(project, image_id):
   temp = str(project['file_ids'])
   print(f'server before delete: {temp}')
   
+  #daviesian, Anvil Deleloper
   project['file_ids'] = [i for i in project['file_ids'] if i != image_id]
 
   temp = str(project['file_ids'])

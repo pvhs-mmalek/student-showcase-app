@@ -29,6 +29,7 @@ components:
     properties: {text: Delete}
     type: Button
     layout_properties: {grid_position: 'PHJFWP,AUYDBZ'}
+    event_bindings: {click: delete_button_click}
   - name: edit_button
     properties: {text: Edit}
     type: Button

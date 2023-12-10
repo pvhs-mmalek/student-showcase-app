@@ -34,3 +34,7 @@ class OwnProject(OwnProjectTemplate):
 # def next_image_button_click(self):
 #   Global.own_image_index += 0
 #   if Global.own_image_index ==
+
+  def delete_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass
