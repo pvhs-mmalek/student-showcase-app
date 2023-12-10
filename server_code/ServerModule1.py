@@ -74,7 +74,14 @@ def add_project_images(project, image_list):
 def delete_project_image(project, image_id):
   file = app_files.user_images.get_by_id(image_id)
   file.delete()
-  project['file_ids'].remove(image_id)
+  print(f'id to delete: {image_id}')
+  temp = str(project['file_ids'])
+  print(f'server before delete: {temp}')
+  
+  project['file_ids'] = [i for i in project['file_ids'] if i != image_id]
+
+  temp = str(project['file_ids'])
+  print(f'server after delete: {temp}')
   if project['file_ids'] == None:
     project['file_ids'] = []
 

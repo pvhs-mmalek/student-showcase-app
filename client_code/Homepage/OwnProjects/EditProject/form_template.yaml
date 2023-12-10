@@ -30,7 +30,7 @@ components:
     type: Label
     layout_properties: {grid_position: 'PNHCEH,AZREKF'}
   - name: image_uploader
-    properties: {multiple: true, file_types: image/*}
+    properties: {multiple: false, file_types: image/*}
     type: FileLoader
     layout_properties: {grid_position: 'PNHCEH,TFMFAT'}
     data_bindings: []

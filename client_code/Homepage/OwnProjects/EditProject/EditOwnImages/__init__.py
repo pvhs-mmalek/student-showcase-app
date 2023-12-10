@@ -27,6 +27,5 @@ class EditOwnImages(EditOwnImagesTemplate):
   def delete_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.server.call('delete_project_image', Global.current_project, self.item)
-    Global.current_project['file_ids'] = anvil.server.call()
     Global.set_panel(Global.edit_image_panel, RepeatingPanel(item_template=EditOwnImages, items=Global.current_project['file_ids']))
     
