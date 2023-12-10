@@ -15,35 +15,30 @@ class ImageButton(ImageButtonTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    Global.own_img_list = anvil.server.call('get_project_images', self.item)
-    Global.own_img = Global.own_img_list[Global.own_image_index]
-    self.project_image.source = Global.own_img
+    self.images = anvil.server.call('get_images', self.item)
+    self.project_image.source = self.images[self.index]
     check_image_buttons(self)
 
   def prev_image_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    Global.own_image_index -= 1
+    self.index -= 1
     check_image_buttons(self)
-    Global.own_img_list = anvil.server.call('get_project_images', self.item)
-    Global.own_img = Global.own_img_list[Global.own_image_index]
-    self.project_image.source = Global.own_img
+    self.project_image.source = self.images[self.index]
 
   def next_image_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    Global.own_image_index += 1
+    self.index += 1
     check_image_buttons(self)
-    Global.own_img_list = anvil.server.call('get_project_images', self.item)
-    Global.own_img = Global.own_img_list[Global.own_image_index]
-    self.project_image.source = Global.own_img
+    self.project_image.source = self.images[self.index]
     
 def check_image_buttons(self, **event_args):
-  if Global.own_image_index < 1:
+  if self.index < 1:
     self.prev_image_button.enabled = False
     self.prev_image_button.visible = False
   else:
     self.prev_image_button.enabled = True
     self.prev_image_button.visible = True
-  if Global.own_image_index == len(Global.own_img_list)-1:
+  if self.index == len(self.item)-1:
     self.next_image_button.enabled = False
     self.next_image_button.visible = False
   else:

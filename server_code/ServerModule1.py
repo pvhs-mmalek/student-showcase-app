@@ -36,7 +36,10 @@ def update_project(project, project_dict):
 def delete_project(project):
   current_user = anvil.users.get_user()
   if app_tables.projects.has_row(project):
-    
+    #daviesian, Anvil Deleloper
+    current_user['projects'] = [i for i in current_user['projects'] if i != project]
+    delete_all_project_images(project)
+    project.delete()
   else:
     raise Exception('project does not exist')
 
@@ -50,6 +53,12 @@ def get_images(image_id_list):
 @anvil.server.callable
 def get_image(image_id):
   return app_files.user_images.get_by_id(image_id)
+
+def get_images(id_list):
+  images = []
+  for id in id_list:
+    images.append(get_image(id))
+  return images
 
 @anvil.server.callable
 def get_project_images(project):
@@ -78,19 +87,26 @@ def delete_project_image(project, image_id):
   print(f'id to delete: {image_id}')
   temp = str(project['file_ids'])
   print(f'server before delete: {temp}')
-  
-  #daviesian, Anvil Deleloper
   project['file_ids'] = [i for i in project['file_ids'] if i != image_id]
-
   temp = str(project['file_ids'])
   print(f'server after delete: {temp}')
   if project['file_ids'] == None:
     project['file_ids'] = []
 
 @anvil.server.callable
+def delete_all_project_images(project):
+  if app_tables.projects.has_row(project):
+    for i in project['file_ids']:
+      file = app_files.user_images.get_by_id(i)
+      file.delete()
+  else:
+    raise Exception('Project does not exist')
+
+@anvil.server.callable
 def replace_image_file(project, old_image_id, new_image):
   delete_project_image(project, old_image_id)
   add_project_image(project, new_image)
+  
   
 
 

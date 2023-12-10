@@ -17,6 +17,7 @@ class ViewOwnProjects(ViewOwnProjectsTemplate):
 
     # Any code you write here will run before the form opens.
     self.own_projects_panel.items = anvil.server.call('get_own_projects')
+    Global.OwnProjects_repeating_panel = self.own_projects_panel
 
   def new_project_button_click(self, **event_args):
     """This method is called when the button is clicked"""

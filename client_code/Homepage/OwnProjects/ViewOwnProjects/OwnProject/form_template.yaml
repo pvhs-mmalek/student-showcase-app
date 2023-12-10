@@ -18,7 +18,7 @@ components:
     data_bindings:
     - {property: text, code: 'self.item[''description'']', writeback: false}
   - name: image_panel
-    properties: {}
+    properties: {role: elevated-card}
     type: ColumnPanel
     layout_properties: {grid_position: 'AHNKWZ,JZUNCP'}
   - name: spacer_1

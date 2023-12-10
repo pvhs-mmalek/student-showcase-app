@@ -18,11 +18,11 @@ class OwnProject(OwnProjectTemplate):
 
     # Any code you write here will run before the form opens.
     
-    # if len(self.item['files']) > 0:
-    #   self.image_panel.clear()
-    #   self.image_panel.add_component(ImageButton(item=self.item))
-    # else:
-    #   self.image_panel.clear()
+    if len(self.item['file_ids']) > 0:
+      self.image_panel.clear()
+      self.image_panel.add_component(ImageButton(item=self.item['file_ids']))
+    else:
+      self.image_panel.clear()
     
 
   def edit_button_click(self, **event_args):
@@ -31,10 +31,7 @@ class OwnProject(OwnProjectTemplate):
     Global.current_project = self.item
     Global.set_panel(Global.OwnProjects_content_panel, form)
 
-# def next_image_button_click(self):
-#   Global.own_image_index += 0
-#   if Global.own_image_index ==
-
   def delete_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    pass
+    anvil.server.call('delete_project', self.item)
+    Global.OwnProjects_repeating_panel.items = anvil.server.call('get_own_projects')
