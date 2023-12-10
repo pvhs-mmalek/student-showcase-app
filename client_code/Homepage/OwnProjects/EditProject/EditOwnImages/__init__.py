@@ -18,11 +18,6 @@ class EditOwnImages(EditOwnImagesTemplate):
     print(self.item)
     self.project_image.source = anvil.server.call('get_image', self.item)
 
-  def change_project_image_button_change(self, file, **event_args):
-    """This method is called when a new file is loaded into this FileLoader"""
-    anvil.server.call('replace_image_file',Global.current_project, self.item, file)
-    self.item = anvil.server.call('get_project_image')
-    self.project_image.source = self.item
 
   def delete_button_click(self, **event_args):
     """This method is called when the button is clicked"""
