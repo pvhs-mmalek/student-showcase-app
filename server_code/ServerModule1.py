@@ -147,4 +147,7 @@ def update_profile(profile, profile_dict):
   else:
     raise Exception('Profile does not exist')
 
+@anvil.server.callable
+def search_all_profiles(query):
+  pass
 
