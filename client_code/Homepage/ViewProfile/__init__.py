@@ -28,4 +28,4 @@ class ViewProfile(ViewProfileTemplate):
   def show_profile_projects_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     Global.selected_profile = self
-    Global.set_panel(Global.homepage_content_panel, ViewProjects(item=anvil.server.call('get_projects_from_email', self.item['email'])))
+    Global.set_panel(Global.homepage_content_panel, ViewProjects(item=self.item))

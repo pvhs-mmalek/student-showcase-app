@@ -1,0 +1,188 @@
+container: {type: ColumnPanel}
+components:
+- name: search_options_panel
+  properties: {col_widths: '{}', border: '', role: null}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'HUHXND,HYERSS'}
+  components:
+  - name: column_panel_1
+    properties: {role: null}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'VSOYXT,FOWLGG'}
+    components:
+    - name: option_box
+      properties: {col_widths: '{"ZNVUPF":20,"MAINLP":20,"YEOEAO":20}'}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'VNHKBP,CJXCXL'}
+      components:
+      - name: label_1
+        properties: {text: Min GPA}
+        type: Label
+        layout_properties: {grid_position: 'RGUSPO,ZNVUPF'}
+      - name: min_gpa_box
+        properties: {}
+        type: TextBox
+        layout_properties: {grid_position: 'RGUSPO,MAINLP'}
+      - name: min_gpa_check
+        properties: {text: include}
+        type: CheckBox
+        layout_properties: {grid_position: 'RGUSPO,YEOEAO'}
+      - name: option_box_copy_2
+        properties: {col_widths: '{"ZNVUPF":20,"MAINLP":20,"YEOEAO":20}'}
+        type: ColumnPanel
+        layout_properties: {grid_position: 'QJBYII,ZBWDRK'}
+        components:
+        - name: label_1_copy_2
+          properties: {text: Max GPA}
+          type: Label
+          layout_properties: {grid_position: 'RGUSPO,ZNVUPF'}
+        - name: max_gpa_box
+          properties: {}
+          type: TextBox
+          layout_properties: {grid_position: 'RGUSPO,MAINLP'}
+        - name: max_gpa_check
+          properties: {text: include}
+          type: CheckBox
+          layout_properties: {grid_position: 'RGUSPO,YEOEAO'}
+    - name: option_box_copy
+      properties: {col_widths: '{"ZNVUPF":20,"MAINLP":20,"YEOEAO":20}'}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'VNHKBP,UCOCMZ EKLLXI,NRDKEC'}
+      components:
+      - name: label_1_copy
+        properties: {text: Min ACT}
+        type: Label
+        layout_properties: {grid_position: 'RGUSPO,ZNVUPF'}
+      - name: min_act_box
+        properties: {}
+        type: TextBox
+        layout_properties: {grid_position: 'RGUSPO,MAINLP'}
+      - name: min_act_check
+        properties: {text: include}
+        type: CheckBox
+        layout_properties: {grid_position: 'RGUSPO,YEOEAO'}
+    - name: option_box_copy_3
+      properties: {col_widths: '{"ZNVUPF":20,"MAINLP":20,"YEOEAO":20}'}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'VNHKBP,UCOCMZ BIKYFS,APFFLH'}
+      components:
+      - name: label_1_copy_3
+        properties: {text: 'Max ACT:'}
+        type: Label
+        layout_properties: {grid_position: 'RGUSPO,ZNVUPF'}
+      - name: max_act_box
+        properties: {}
+        type: TextBox
+        layout_properties: {grid_position: 'RGUSPO,MAINLP'}
+      - name: max_act_check
+        properties: {text: include}
+        type: CheckBox
+        layout_properties: {grid_position: 'RGUSPO,YEOEAO'}
+    - name: option_box_copy_copy
+      properties: {col_widths: '{"ZNVUPF":20,"MAINLP":20,"YEOEAO":20}'}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'VNHKBP,VCSXUL VUIRSB,MLXHNO'}
+      components:
+      - name: label_1_copy_copy
+        properties: {text: Min SAT}
+        type: Label
+        layout_properties: {grid_position: 'RGUSPO,ZNVUPF'}
+      - name: min_sat_box
+        properties: {}
+        type: TextBox
+        layout_properties: {grid_position: 'RGUSPO,MAINLP'}
+      - name: min_sat_check
+        properties: {text: include}
+        type: CheckBox
+        layout_properties: {grid_position: 'RGUSPO,YEOEAO'}
+    - name: option_box_copy_copy_2
+      properties: {col_widths: '{"ZNVUPF":20,"MAINLP":20,"YEOEAO":20}'}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'VNHKBP,VCSXUL UVECMV,BHLHYZ'}
+      components:
+      - name: label_1_copy_copy_2
+        properties: {text: Max SAT}
+        type: Label
+        layout_properties: {grid_position: 'RGUSPO,ZNVUPF'}
+      - name: max_sat_box
+        properties: {}
+        type: TextBox
+        layout_properties: {grid_position: 'RGUSPO,MAINLP'}
+      - name: max_sat_check
+        properties: {text: include}
+        type: CheckBox
+        layout_properties: {grid_position: 'RGUSPO,YEOEAO'}
+  - name: search_options_panel_copy
+    properties: {col_widths: '{"WLXEOK":25,"RPJOFQ":35}'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'XMOLTW,RUBPOH'}
+    components:
+    - name: option_box_copy_4
+      properties: {col_widths: '{"ZNVUPF":20,"MAINLP":20,"YEOEAO":20}'}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'VUTDTP,WLXEOK YNYXTK,NXASOL'}
+      components:
+      - name: label_1_copy_4
+        properties: {text: Min Grade}
+        type: Label
+        layout_properties: {grid_position: 'RGUSPO,ZNVUPF'}
+      - name: min_grade_box
+        properties: {text: ''}
+        type: TextBox
+        layout_properties: {grid_position: 'RGUSPO,MAINLP'}
+      - name: min_grade_check
+        properties: {text: include}
+        type: CheckBox
+        layout_properties: {grid_position: 'RGUSPO,YEOEAO'}
+    - name: option_box_copy_2_copy
+      properties: {col_widths: '{"ZNVUPF":20,"MAINLP":20,"YEOEAO":20}'}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'VUTDTP,WLXEOK JTSZBI,RRLDLY'}
+      components:
+      - name: label_1_copy_2_copy
+        properties: {text: Max Grade}
+        type: Label
+        layout_properties: {grid_position: 'RGUSPO,ZNVUPF'}
+      - name: max_grade_box
+        properties: {}
+        type: TextBox
+        layout_properties: {grid_position: 'RGUSPO,MAINLP'}
+      - name: max_grade_check
+        properties: {text: include}
+        type: CheckBox
+        layout_properties: {grid_position: 'RGUSPO,YEOEAO'}
+    - name: option_box_copy_copy_3
+      properties: {col_widths: '{"ZNVUPF":10,"MAINLP":30,"YEOEAO":20}'}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'VUTDTP,RPJOFQ AAZIBW,JZIJAA'}
+      components:
+      - name: label_1_copy_copy_3
+        properties: {text: Location}
+        type: Label
+        layout_properties: {grid_position: 'RGUSPO,ZNVUPF'}
+      - name: location_box
+        properties: {}
+        type: TextBox
+        layout_properties: {grid_position: 'RGUSPO,MAINLP'}
+      - name: location_check
+        properties: {text: include}
+        type: CheckBox
+        layout_properties: {grid_position: 'RGUSPO,YEOEAO'}
+    - name: option_box_copy_3_copy
+      properties: {col_widths: '{"ZNVUPF":10,"MAINLP":30,"YEOEAO":20}'}
+      type: ColumnPanel
+      layout_properties: {grid_position: 'VUTDTP,RPJOFQ LCIPMQ,VHRUEL'}
+      components:
+      - name: label_1_copy_3_copy
+        properties: {text: School}
+        type: Label
+        layout_properties: {grid_position: 'RGUSPO,ZNVUPF'}
+      - name: school_box
+        properties: {}
+        type: TextBox
+        layout_properties: {grid_position: 'RGUSPO,MAINLP'}
+      - name: school_check
+        properties: {text: include}
+        type: CheckBox
+        layout_properties: {grid_position: 'RGUSPO,YEOEAO'}
+is_package: true

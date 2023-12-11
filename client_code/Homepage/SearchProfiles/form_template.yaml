@@ -6,6 +6,7 @@ components:
   properties: {}
   type: TextBox
   layout_properties: {grid_position: 'QJYOPR,HGGGAR'}
+  event_bindings: {pressed_enter: search_box_pressed_enter}
 - name: advanced_search_button
   properties: {text: advanced Search}
   type: Button
@@ -16,7 +17,7 @@ components:
   layout_properties: {grid_position: 'SJXHRA,TKLQFJ'}
   components:
   - name: repeating_profile_panel
-    properties: {item_template: Homepage.SearchProfiles.ItemTemplate1}
+    properties: {item_template: Homepage.ViewProfile}
     type: RepeatingPanel
     layout_properties: {grid_position: 'CYDOTD,MSRNZC'}
 is_package: true

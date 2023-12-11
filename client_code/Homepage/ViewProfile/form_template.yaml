@@ -4,7 +4,7 @@ container:
 components:
 - name: content_panel
   properties: {col_widths: '{"NBDSUP":15,"NNDNBW":18,"FNTQGE":20,"HJOUQQ":40,"MRQQSD":20,"WWDLKN":40,"ZBLGVU":15,"LLINUK":35,"WRJKAD":42,"CBYMHP":10,"WXYWEZ":50,"GYXIMH":10,"VZLOIU":50,"VYYQTG":10,"PQBNOI":50,"RSNOUN":20,"UJEMSK":40,"QCKFSC":20,"HLVPAY":40,"KKNCTP":20,"JGCEFN":40,"FLRLQJ":20,"BINHPC":40,"JSJCGY":40,"KGHRIU":15,"ZAQDSN":45,"UQZLQQ":5,"VEIYDE":8,"UYOWCG":2,"AHWOLC":2}',
-    col_spacing: medium}
+    col_spacing: medium, role: elevated-card}
   type: ColumnPanel
   layout_properties: {grid_position: 'THLSNK,CARSFU'}
   components:

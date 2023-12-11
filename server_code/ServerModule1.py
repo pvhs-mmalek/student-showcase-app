@@ -148,6 +148,19 @@ def update_profile(profile, profile_dict):
     raise Exception('Profile does not exist')
 
 @anvil.server.callable
-def search_all_profiles(query):
-  pass
+def search_profiles_by_name(query):
+  result = app_tables.profiles.search()
+  if query:
+    result = [
+      profile for profile in result
+      if query in profile['email']
+      or query in profile['name']
+    ]
+  return result
+
+@anvil.server.callable
+def advanced_profile_search(query):
+  result = app_tables.profiles.search()
+  result = []
+
 

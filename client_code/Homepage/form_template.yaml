@@ -32,6 +32,7 @@ components:
     properties: {text: Search Profiles}
     type: Link
     layout_properties: {grid_position: 'XNOFLC,VBXPEF'}
+    event_bindings: {click: search_profiles_button_click}
   - name: logout_button
     properties: {text: Logout}
     type: Link

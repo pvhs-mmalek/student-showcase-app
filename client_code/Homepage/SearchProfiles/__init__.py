@@ -14,4 +14,14 @@ class SearchProfiles(SearchProfilesTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    if self.item:
+      self.search_box.text = self.item
+      self.repeating_profile_panel.items = anvil.server.call('search_profiles_by_name', self.search_box.text)
+    else:
+      self.repeating_profile_panel.items = anvil.server.call('search_profiles_by_name', False)
+
+  def search_box_pressed_enter(self, **event_args):
+    """This method is called when the user presses Enter in this text box"""
+    self.repeating_profile_panel.items = anvil.server.call('search_profiles_by_name', self.search_box.text)
+
 

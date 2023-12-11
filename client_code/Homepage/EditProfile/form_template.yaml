@@ -2,7 +2,7 @@ container: {type: ColumnPanel}
 components:
 - name: content_panel
   properties: {col_widths: '{"CJRHBM":25,"NBDSUP":25,"DUWVLB":10,"SWGAGE":50,"FWOLPW":10,"AQUDOI":50,"SAJERY":10,"MCEPVY":50,"ZIUIYN":20,"ZSDTSJ":20,"SLUHQO":10,"ZQPESG":20,"LTBWFW":30,"CJAQTV":10,"RHUULW":20,"KWCWUS":30,"OBEAHT":10,"PKQOGB":20,"QHWJZW":20,"RKUTGX":10,"ZVEHMN":50,"KIWENF":10,"XWVQNE":50,"GMEJYM":10,"MMJLAD":50,"ACNQUI":11,"KMRKHG":30,"GTUQGU":15,"ONVSRH":45}',
-    col_spacing: medium}
+    col_spacing: medium, role: outlined-card}
   type: ColumnPanel
   layout_properties: {grid_position: 'UZZFNJ,OYWGHZ'}
   components:
