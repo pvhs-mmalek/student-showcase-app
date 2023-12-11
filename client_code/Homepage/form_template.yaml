@@ -17,16 +17,21 @@ components:
   type: ColumnPanel
   layout_properties: {slot: left-nav}
   components:
+  - name: view_own_profile_button
+    properties: {text: My Profile}
+    type: Link
+    layout_properties: {grid_position: 'LEFAYQ,EXAMDN'}
+    event_bindings: {click: view_own_profile_button_click}
+    components: []
   - name: own_projects_button
     properties: {text: My Projects}
     type: Link
     layout_properties: {grid_position: 'GSLTAC,LWEOPQ'}
     event_bindings: {click: own_projects_button_click}
-  - name: view_own_profile_button
-    properties: {text: Own Profile}
+  - name: search_profiles_button
+    properties: {text: Search Profiles}
     type: Link
-    layout_properties: {grid_position: 'SHIBTT,YWGETE'}
-    event_bindings: {click: view_own_profile_button_click}
+    layout_properties: {grid_position: 'XNOFLC,VBXPEF'}
   - name: logout_button
     properties: {text: Logout}
     type: Link

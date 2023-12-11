@@ -20,6 +20,10 @@ class Homepage(HomepageTemplate):
     anvil.users.login_with_form()
     anvil.server.call('check_new_user')
     Global.homepage_content_panel = self.content_panel
+    Global.own_profile = ViewOwnProfile(item=anvil.server.call('get_own_profile'))
+    self.content_panel.clear()
+    self.content_panel.add_component(Global.own_profile)
+    
     
 
   def logout_button_click(self, **event_args):

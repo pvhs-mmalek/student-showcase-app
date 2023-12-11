@@ -17,14 +17,12 @@ class OwnProject(OwnProjectTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    
     if len(self.item['file_ids']) > 0:
       self.image_panel.clear()
       self.image_panel.add_component(ImageButton(item=self.item['file_ids']))
     else:
       self.image_panel.clear()
     
-
   def edit_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     form = EditProject(item=self.item)
