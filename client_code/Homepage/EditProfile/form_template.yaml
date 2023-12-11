@@ -21,7 +21,7 @@ components:
     type: Label
     layout_properties: {grid_position: 'APGIFV,CJRHBM MFGVJP,SAJERY'}
   - name: age_box
-    properties: {}
+    properties: {type: number}
     type: TextBox
     layout_properties: {grid_position: 'APGIFV,CJRHBM MFGVJP,MCEPVY'}
     data_bindings:
@@ -64,7 +64,7 @@ components:
     type: Label
     layout_properties: {grid_position: 'APGIFV,NBDSUP UFAODI,GMEJYM'}
   - name: grade_box
-    properties: {}
+    properties: {type: number}
     type: TextBox
     layout_properties: {grid_position: 'APGIFV,NBDSUP UFAODI,MMJLAD'}
     data_bindings:
@@ -78,7 +78,7 @@ components:
     type: Label
     layout_properties: {grid_position: 'BZYILE,ZIUIYN KQJTUH,OBEAHT'}
   - name: gpa_box
-    properties: {}
+    properties: {type: number}
     type: TextBox
     layout_properties: {grid_position: 'BZYILE,ZIUIYN KQJTUH,PKQOGB'}
     data_bindings:
@@ -92,7 +92,7 @@ components:
     type: Label
     layout_properties: {grid_position: 'BZYILE,ZIUIYN YWEKYG,CJAQTV'}
   - name: act_box
-    properties: {}
+    properties: {type: number}
     type: TextBox
     layout_properties: {grid_position: 'BZYILE,ZIUIYN YWEKYG,RHUULW'}
     data_bindings:
@@ -106,7 +106,7 @@ components:
     type: Label
     layout_properties: {grid_position: 'BZYILE,ZIUIYN OPQJQY,SLUHQO'}
   - name: sat_box
-    properties: {}
+    properties: {type: number}
     type: TextBox
     layout_properties: {grid_position: 'BZYILE,ZIUIYN OPQJQY,ZQPESG'}
     data_bindings:
@@ -123,6 +123,7 @@ components:
     properties: {text: profile Image}
     type: FileLoader
     layout_properties: {grid_position: 'BZYILE,ZSDTSJ KCDAZN,PZFZBA'}
+    event_bindings: {change: profile_image_load_change}
   - name: project_image
     properties: {height: '125'}
     type: Image
@@ -131,6 +132,7 @@ components:
     properties: {text: Project Image}
     type: FileLoader
     layout_properties: {grid_position: 'BZYILE,QHWJZW QOFELI,JVPEEM'}
+    event_bindings: {change: project_image_load_change}
   - name: label_1
     properties: {text: 'About Me:'}
     type: Label

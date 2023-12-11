@@ -59,6 +59,11 @@ def delete_project(project):
     raise Exception('project does not exist')
 
 @anvil.server.callable
+def add_image_return_id(image):
+  file = app_files.user_images.create_file(image.name, image)
+  return file.id
+
+@anvil.server.callable
 def get_images(image_id_list):
   image_files = []
   for id in image_id_list:
@@ -94,6 +99,11 @@ def add_project_images(project, image_list):
   for img in image_list:
     image = app_files.user_images.create_file(img.name, img)
     project['file_ids'] += [image.id]
+
+@anvil.server.callable
+def delete_image(image_id):
+  file = app_files.user_images.get_by_id(image_id)
+  file.delete()
 
 @anvil.server.callable
 def delete_project_image(project, image_id):

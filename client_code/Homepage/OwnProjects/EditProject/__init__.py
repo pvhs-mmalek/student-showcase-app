@@ -30,7 +30,6 @@ class EditProject(EditProjectTemplate):
     project['title'] = self.title_box.text
     project['description'] = self.description_box.text
     anvil.server.call('update_project', self.item, project)
-    
     Global.set_panel(Global.OwnProjects_content_panel, ViewOwnProjects())
     
 

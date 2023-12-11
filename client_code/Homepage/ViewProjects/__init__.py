@@ -19,6 +19,7 @@ class ViewProjects(ViewProjectsTemplate):
 
   def view_user_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    Global.set_panel(Global.homepage_content_panel, ViewProfile(item=anvil.server.call('get_profile_by_email', self.item['email'])))
+    Global.selected_profile.remove_from_parent()
+    Global.set_panel(Global.homepage_content_panel, Global.selected_profile)
     
     
