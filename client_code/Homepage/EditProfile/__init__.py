@@ -15,6 +15,11 @@ class EditProfile(EditProfileTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    if self.item['profile_image'] != None:
+      self.profile_image.source = anvil.server.call('get_image', self.item['profile_image'])
+    if self.item['project_image'] != None:
+      self.project_image.source = anvil.server.call('get_image', self.item['project_image'])
+    
   
   def cancel_button_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -37,17 +42,26 @@ class EditProfile(EditProfileTemplate):
     profile_dict['about'] = self.about_box.text
     profile_dict['project_title'] = self.title_box.text
     profile_dict['project_desc'] = self.project_description.text
+    profile_dict['profile_image'] = self.item['profile_image']
+    profile_dict['project_image'] = self.item['project_image']
     anvil.server.call('update_profile', self.item, profile_dict)
     Global.own_profile.item = self.item
     Global.set_panel(Global.homepage_content_panel, Global.own_profile)
 
   def profile_image_load_change(self, file, **event_args):
     """This method is called when a new file is loaded into this FileLoader"""
-    anvil.server.call('delete_image', self.item['profile_image'])
-    self.item['profile_image'] = anvil.server.call('add_image_return_id', file)
+    if self.item['profile_image'] != None:
+      anvil.server.call('delete_image', self.item['profile_image'])
+    image_id = anvil.server.call('add_image_return_id', file)
+    anvil.server.call('set_profile_image_id', self.item, image_id)
+    self.profile_image.source = anvil.server.call('get_image',image_id)
 
   def project_image_load_change(self, file, **event_args):
     """This method is called when a new file is loaded into this FileLoader"""
-    pass
+    if self.project_image == None:
+      anvil.server.call('delete_image', self.item['project_image'])
+    image_id = anvil.server.call('add_image_return_id', file)
+    anvil.server.call('set_profile_project_image_id', self.item, image_id)
+    self.project_image.source = anvil.server.call('get_image',image_id)
 
 

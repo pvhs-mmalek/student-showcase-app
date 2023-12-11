@@ -23,8 +23,7 @@ class ViewProfile(ViewProfileTemplate):
       self.profile_image.source = anvil.server.call('get_image', profile_image)
     if project_image != None:
       self.project_image.source = anvil.server.call('get_image', project_image)
-    
-      
+
 
   def show_profile_projects_button_click(self, **event_args):
     """This method is called when the button is clicked"""

@@ -15,6 +15,14 @@ def check_new_user():
     current_user['profile'] = app_tables.profiles.add_row(email=current_user['email'])
 
 @anvil.server.callable
+def set_profile_image_id(profile, image_id):
+  profile['profile_image'] = image_id
+
+@anvil.server.callable
+def set_profile_project_image_id(profile, image_id):
+  profile['project_image'] = image_id
+
+@anvil.server.callable
 def get_own_projects():
   current_user = anvil.users.get_user()
   return current_user['projects']

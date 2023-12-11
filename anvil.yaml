@@ -144,9 +144,6 @@ db_schema:
     - name: award
       admin_ui: {width: 200, order: 5}
       type: simpleObject
-    - name: profile_image
-      admin_ui: {order: 6, width: 200}
-      type: string
     - name: school
       admin_ui: {width: 200, order: 7}
       type: string
@@ -168,11 +165,14 @@ db_schema:
     - name: project_desc
       admin_ui: {width: 200, order: 13}
       type: string
-    - name: project_image
-      admin_ui: {width: 200, order: 14}
-      type: string
     - name: email
       admin_ui: {width: 200, order: 15}
+      type: string
+    - name: profile_image
+      admin_ui: {width: 200, order: 16}
+      type: string
+    - name: project_image
+      admin_ui: {width: 200, order: 17}
       type: string
     title: Profiles
 renamed: true
