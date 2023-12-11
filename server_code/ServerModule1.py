@@ -12,7 +12,7 @@ def check_new_user():
   if current_user['projects'] == None:
     current_user['projects'] = []
   if current_user['profile'] == None:
-    current_user['profile'] = []
+    current_user['profile'] = app_tables.profiles.add_row(email=current_user['email'])
 
 @anvil.server.callable
 def get_own_projects():

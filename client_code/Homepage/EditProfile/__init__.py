@@ -7,6 +7,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from ... import Global
 
 class EditProfile(EditProfileTemplate):
   def __init__(self, **properties):
@@ -14,3 +15,12 @@ class EditProfile(EditProfileTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+  
+  def cancel_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    Global.set_panel(Global.homepage_content_panel, Global.own_profile)
+
+  def save_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    profile_dict = dict(self.item)
+    

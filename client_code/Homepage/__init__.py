@@ -9,6 +9,7 @@ import anvil.users
 import anvil.server
 from .. import Global
 from .OwnProjects import OwnProjects
+from .ViewOwnProfile import ViewOwnProfile
 
 class Homepage(HomepageTemplate):
   def __init__(self, **properties):
@@ -32,5 +33,11 @@ class Homepage(HomepageTemplate):
     form = OwnProjects()
     self.content_panel.clear()
     self.content_panel.add_component(form)
+
+  def view_own_profile_button_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    Global.own_profile = ViewOwnProfile(item=anvil.server.call('get_own_profile'))
+    self.content_panel.clear()
+    self.content_panel.add_component(Global.own_profile)
 
  
