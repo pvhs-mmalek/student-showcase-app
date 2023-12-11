@@ -8,6 +8,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from ... import Global
+from ..ViewProfile import ViewProfile
 
 class EditProfile(EditProfileTemplate):
   def __init__(self, **properties):
@@ -45,8 +46,8 @@ class EditProfile(EditProfileTemplate):
     profile_dict['profile_image'] = self.item['profile_image']
     profile_dict['project_image'] = self.item['project_image']
     anvil.server.call('update_profile', self.item, profile_dict)
-    Global.own_profile.item = self.item
-    Global.set_panel(Global.homepage_content_panel, Global.own_profile)
+    self.item = anvil.server.call('get_own_profile')
+    Global.set_panel(Global.homepage_content_panel, ViewProfile(item=self.item))
 
   def profile_image_load_change(self, file, **event_args):
     """This method is called when a new file is loaded into this FileLoader"""
