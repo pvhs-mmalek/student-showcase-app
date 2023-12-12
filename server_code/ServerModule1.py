@@ -159,8 +159,35 @@ def search_profiles_by_name(query):
   return result
 
 @anvil.server.callable
-def advanced_profile_search(query):
+def advanced_profile_search(search_dict):
   result = app_tables.profiles.search()
-  result = []
+  
+  if not search_dict['max_act_check']:
+    search_dict['max_act'] = 36
+  if not search_dict['max_gpa_check']:
+    search_dict['max_gpa'] = 5
+  if not search_dict['max_grade_check']:
+    search_dict['max_grade'] = 12
+  if not search_dict['max_sat_check']:
+    search_dict['max_sat'] = 1600
+  if not search_dict['min_act_check']:
+    search_dict['min_act'] = 0
+  if not search_dict['min_gpa_check']:
+    search_dict['min_gpa'] = 0
+  if not search_dict['min_sat_check']:
+    search_dict['min_sat'] = 400
+  if not search_dict['min_grade_check']:
+    search_dict['min_grade'] = 9
+
+  result = [
+    profile for profile in result
+    if (profile['act']>=search_dict['min_act'] and profile['act']<=search_dict['max_act'])
+    and (profile['gpa']>=search_dict['min_gpa'] and profile['gpa']<=search_dict['max_gpa'])
+    and (profile['sat']>=search_dict['min_sat'] and profile['sat']<=search_dict['max_sat'])
+    and (profile['grade']>=search_dict['min_grade'] and profile['grade']<=search_dict['max_grade'])
+    and ((not search_dict['location_check']) or (search_dict['location_check'] and (search_dict['location'] == profile['location'])))
+    and ((not search_dict['school_check']) or (search_dict['school_check'] and (search_dict['school'] == profile['school'])))
+  ]
+  return result
 
 

@@ -7,6 +7,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from .AdvancedSearch import AdvancedSearch
 
 class SearchProfiles(SearchProfilesTemplate):
   def __init__(self, **properties):
@@ -48,6 +49,17 @@ class SearchProfiles(SearchProfilesTemplate):
       'school': '',
       'school_check': False,
     }
-    search_clicked = alert()
+    search_clicked = alert(
+      content = AdvancedSearch(item=search_dict),
+      title="Advanced Search",
+      large = True,
+      buttons = [('Cancel',False),('Search',True)],
+      dismissible=False
+    )
+    if search_clicked:
+      print(search_dict)
+      temp = anvil.server.call('advanced_profile_search', search_dict)
+      print(temp)
+      self.repeating_profile_panel.items = temp
 
 
