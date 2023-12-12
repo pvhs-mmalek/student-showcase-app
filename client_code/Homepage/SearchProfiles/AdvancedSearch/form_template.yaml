@@ -20,9 +20,11 @@ components:
         type: Label
         layout_properties: {grid_position: 'RGUSPO,ZNVUPF'}
       - name: min_gpa_box
-        properties: {}
+        properties: {placeholder: ''}
         type: TextBox
         layout_properties: {grid_position: 'RGUSPO,MAINLP'}
+        data_bindings:
+        - {property: text, code: 'self.item['''']', writeback: false}
       - name: min_gpa_check
         properties: {text: include}
         type: CheckBox

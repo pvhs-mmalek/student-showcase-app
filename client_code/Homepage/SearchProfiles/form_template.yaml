@@ -11,6 +11,7 @@ components:
   properties: {text: advanced Search}
   type: Button
   layout_properties: {grid_position: 'QJYOPR,EAZDMO'}
+  event_bindings: {click: advanced_search_button_click}
 - name: column_panel_1
   properties: {}
   type: ColumnPanel
