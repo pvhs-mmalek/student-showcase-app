@@ -1,173 +1,207 @@
 container: {type: ColumnPanel}
 components:
 - name: content_panel
-  properties: {col_widths: '{"CJRHBM":25,"NBDSUP":25,"DUWVLB":10,"SWGAGE":50,"FWOLPW":10,"AQUDOI":50,"SAJERY":10,"MCEPVY":50,"ZIUIYN":20,"ZSDTSJ":20,"SLUHQO":10,"ZQPESG":20,"LTBWFW":30,"CJAQTV":10,"RHUULW":20,"KWCWUS":30,"OBEAHT":10,"PKQOGB":20,"QHWJZW":20,"RKUTGX":10,"ZVEHMN":50,"KIWENF":10,"XWVQNE":50,"GMEJYM":10,"MMJLAD":50,"ACNQUI":11,"KMRKHG":30,"GTUQGU":15,"ONVSRH":45}',
-    col_spacing: medium, role: outlined-card}
+  properties: {col_widths: '{"UVRENU":25,"CYKCLF":35,"ZRSFBZ":25,"MNJMWX":35}', col_spacing: medium,
+    role: outlined-card}
   type: ColumnPanel
   layout_properties: {grid_position: 'UZZFNJ,OYWGHZ'}
   components:
-  - name: label_2
-    properties: {text: 'Name:'}
-    type: Label
-    layout_properties: {grid_position: 'APGIFV,CJRHBM MUWZTT,DUWVLB'}
-  - name: name_box
+  - name: column_panel_1
+    properties: {col_widths: '{"OOXROC":10,"CDJHGC":50,"ZQDFCB":25,"FOZQRM":35,"NMSOJK":10,"UVQZAX":50,"SFGZFY":10,"WCWBVQ":50}'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'KINSJB,RJKMJO'}
+    components:
+    - name: profile_image
+      properties: {height: '125', border: solid}
+      type: Image
+      layout_properties: {grid_position: 'RQDFHH,ZQDFCB HJXMMN,UUZKWY'}
+      data_bindings: []
+    - name: profile_image_load
+      properties: {text: profile Image}
+      type: FileLoader
+      layout_properties: {grid_position: 'RQDFHH,ZQDFCB KIDXVP,LJUCRD'}
+      event_bindings: {change: profile_image_load_change}
+    - name: label_2
+      properties: {text: 'Name:'}
+      type: Label
+      layout_properties: {grid_position: 'RQDFHH,FOZQRM RSOOSZ,OOXROC'}
+    - name: name_box
+      properties: {}
+      type: TextBox
+      layout_properties: {grid_position: 'RQDFHH,FOZQRM RSOOSZ,CDJHGC'}
+      data_bindings:
+      - {property: text, code: 'self.item[''name'']', writeback: false}
+    - name: label_3
+      properties: {text: 'Age:'}
+      type: Label
+      layout_properties: {grid_position: 'RQDFHH,FOZQRM MXAQPO,NMSOJK'}
+    - name: age_box
+      properties: {type: number}
+      type: TextBox
+      layout_properties: {grid_position: 'RQDFHH,FOZQRM MXAQPO,UVQZAX'}
+      data_bindings:
+      - {property: text, code: 'self.item[''age'']', writeback: false}
+    - name: label_4
+      properties: {text: 'Sex:'}
+      type: Label
+      layout_properties: {grid_position: 'RQDFHH,FOZQRM DHXGTX,SFGZFY'}
+    - name: sex_dropdown
+      properties:
+        include_placeholder: false
+        placeholder: ''
+        items: [Male, Female]
+      type: DropDown
+      layout_properties: {grid_position: 'RQDFHH,FOZQRM DHXGTX,WCWBVQ'}
+      data_bindings:
+      - {property: selected_value, code: 'self.item[''sex'']', writeback: false}
+  - name: column_panel_2
+    properties: {col_widths: '{"FTDGAZ":10,"LBVMVV":50,"OYJDXV":10,"DYDHBW":50,"NAYYXF":10,"EUORFU":50}'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'KINSJB,LXQBKO'}
+    components:
+    - name: label_5
+      properties: {text: 'Location:'}
+      type: Label
+      layout_properties: {grid_position: 'YNANRL,FTDGAZ'}
+    - name: location_box
+      properties: {}
+      type: TextBox
+      layout_properties: {grid_position: 'YNANRL,LBVMVV'}
+      data_bindings:
+      - {property: text, code: 'self.item[''location'']', writeback: false}
+    - name: label_9
+      properties: {text: 'School:'}
+      type: Label
+      layout_properties: {grid_position: 'TEQMBY,OYJDXV'}
+    - name: school_box
+      properties: {}
+      type: TextBox
+      layout_properties: {grid_position: 'TEQMBY,DYDHBW'}
+      data_bindings:
+      - {property: text, code: 'self.item[''school'']', writeback: false}
+    - name: label_10
+      properties: {text: 'Grade:'}
+      type: Label
+      layout_properties: {grid_position: 'NNZJXJ,NAYYXF'}
+    - name: grade_box
+      properties: {type: number}
+      type: TextBox
+      layout_properties: {grid_position: 'NNZJXJ,EUORFU'}
+      data_bindings:
+      - {property: text, code: 'self.item[''grade'']', writeback: false}
+  - name: column_panel_3
+    properties: {col_widths: '{"ARZTFD":10,"ADGIZF":25,"ILIJJO":25,"VCFFML":10,"EYATCH":25,"UNEERZ":25,"TPMFIE":10,"EYUBNL":25,"YBBXTM":25}'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'UPMKYV,UVRENU'}
+    components:
+    - name: spacer_2
+      properties: {height: 66.89276123046875}
+      type: Spacer
+      layout_properties: {grid_position: 'DVFQLC,VXIGAS'}
+    - name: label_6
+      properties: {text: 'GPA:'}
+      type: Label
+      layout_properties: {grid_position: 'ZYYDLK,ARZTFD'}
+    - name: gpa_box
+      properties: {type: number}
+      type: TextBox
+      layout_properties: {grid_position: 'ZYYDLK,ADGIZF'}
+      data_bindings:
+      - {property: text, code: 'self.item[''gpa'']', writeback: false}
+    - name: spacer_1
+      properties: {height: 32}
+      type: Spacer
+      layout_properties: {grid_position: 'ZYYDLK,ILIJJO'}
+    - name: label_7
+      properties: {text: 'ACT:'}
+      type: Label
+      layout_properties: {grid_position: 'YBAEWV,VCFFML'}
+    - name: act_box
+      properties: {type: number}
+      type: TextBox
+      layout_properties: {grid_position: 'YBAEWV,EYATCH'}
+      data_bindings:
+      - {property: text, code: 'self.item[''act'']', writeback: false}
+    - name: act_check_box
+      properties: {text: Include Score}
+      type: CheckBox
+      layout_properties: {grid_position: 'YBAEWV,UNEERZ'}
+    - name: label_8
+      properties: {text: 'SAT:'}
+      type: Label
+      layout_properties: {grid_position: 'REHMCB,TPMFIE'}
+    - name: sat_box
+      properties: {type: number}
+      type: TextBox
+      layout_properties: {grid_position: 'REHMCB,EYUBNL'}
+      data_bindings:
+      - {property: text, code: 'self.item[''sat'']', writeback: false}
+    - name: sat_check_box
+      properties: {text: Include Score}
+      type: CheckBox
+      layout_properties: {grid_position: 'REHMCB,YBBXTM'}
+  - name: column_panel_4
+    properties: {col_widths: '{"HITYHR":20,"WWIQPB":40,"KBUIDY":10,"ULIOMV":50}'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'UPMKYV,CYKCLF'}
+    components:
+    - name: label_11
+      properties: {text: 'Project Title:'}
+      type: Label
+      layout_properties: {grid_position: 'ZZQQBE,KBUIDY'}
+    - name: title_box
+      properties: {}
+      type: TextBox
+      layout_properties: {grid_position: 'ZZQQBE,ULIOMV'}
+      data_bindings:
+      - {property: text, code: 'self.item[''project_title'']', writeback: false}
+    - name: project_image
+      properties: {height: '125', border: solid}
+      type: Image
+      layout_properties: {grid_position: 'PJSMTY,HITYHR YMOVKJ,HAVMOG'}
+    - name: project_image_load
+      properties: {text: Project Image}
+      type: FileLoader
+      layout_properties: {grid_position: 'PJSMTY,HITYHR YXAQQA,UWOTQZ'}
+      event_bindings: {change: project_image_load_change}
+    - name: project_description
+      properties: {height: '125', role: outlined}
+      type: TextArea
+      layout_properties: {grid_position: 'PJSMTY,WWIQPB'}
+      data_bindings:
+      - {property: text, code: 'self.item[''project_desc'']', writeback: false}
+  - name: column_panel_5
     properties: {}
-    type: TextBox
-    layout_properties: {grid_position: 'APGIFV,CJRHBM MUWZTT,SWGAGE'}
-    data_bindings:
-    - {property: text, code: 'self.item[''name'']', writeback: false}
-  - name: label_3
-    properties: {text: 'Age:'}
-    type: Label
-    layout_properties: {grid_position: 'APGIFV,CJRHBM MFGVJP,SAJERY'}
-  - name: age_box
-    properties: {type: number}
-    type: TextBox
-    layout_properties: {grid_position: 'APGIFV,CJRHBM MFGVJP,MCEPVY'}
-    data_bindings:
-    - {property: text, code: 'self.item[''age'']', writeback: false}
-  - name: label_4
-    properties: {text: 'Sex:'}
-    type: Label
-    layout_properties: {grid_position: 'APGIFV,CJRHBM REDALD,FWOLPW'}
-  - name: sex_dropdown
-    properties:
-      include_placeholder: false
-      placeholder: ''
-      items: [Male, Female]
-    type: DropDown
-    layout_properties: {grid_position: 'APGIFV,CJRHBM REDALD,AQUDOI'}
-    data_bindings:
-    - {property: selected_value, code: 'self.item[''sex'']', writeback: false}
-  - name: label_5
-    properties: {text: 'Location:'}
-    type: Label
-    layout_properties: {grid_position: 'APGIFV,NBDSUP ZDMGHD,RKUTGX'}
-  - name: location_box
+    type: ColumnPanel
+    layout_properties: {grid_position: 'OUTOAJ,ZRSFBZ'}
+    components:
+    - name: label_1
+      properties: {text: 'About Me:'}
+      type: Label
+      layout_properties: {grid_position: 'JLGPVE,RADUYO'}
+    - name: about_box
+      properties: {height: '134'}
+      type: TextArea
+      layout_properties: {grid_position: 'YDMWHX,OQHSSO'}
+      data_bindings:
+      - {property: text, code: 'self.item[''about'']', writeback: false}
+  - name: column_panel_6
     properties: {}
-    type: TextBox
-    layout_properties: {grid_position: 'APGIFV,NBDSUP ZDMGHD,ZVEHMN'}
-    data_bindings:
-    - {property: text, code: 'self.item[''location'']', writeback: false}
-  - name: label_9
-    properties: {text: 'School:'}
-    type: Label
-    layout_properties: {grid_position: 'APGIFV,NBDSUP UQWRFP,KIWENF'}
-  - name: school_box
-    properties: {}
-    type: TextBox
-    layout_properties: {grid_position: 'APGIFV,NBDSUP UQWRFP,XWVQNE'}
-    data_bindings:
-    - {property: text, code: 'self.item[''school'']', writeback: false}
-  - name: label_10
-    properties: {text: 'Grade:'}
-    type: Label
-    layout_properties: {grid_position: 'APGIFV,NBDSUP UFAODI,GMEJYM'}
-  - name: grade_box
-    properties: {type: number}
-    type: TextBox
-    layout_properties: {grid_position: 'APGIFV,NBDSUP UFAODI,MMJLAD'}
-    data_bindings:
-    - {property: text, code: 'self.item[''grade'']', writeback: false}
-  - name: spacer_2
-    properties: {height: '150'}
-    type: Spacer
-    layout_properties: {grid_position: 'APGIFV,ACNQUI'}
-  - name: label_6
-    properties: {text: 'GPA:'}
-    type: Label
-    layout_properties: {grid_position: 'BZYILE,ZIUIYN KQJTUH,OBEAHT'}
-  - name: gpa_box
-    properties: {type: number}
-    type: TextBox
-    layout_properties: {grid_position: 'BZYILE,ZIUIYN KQJTUH,PKQOGB'}
-    data_bindings:
-    - {property: text, code: 'self.item[''gpa'']', writeback: false}
-  - name: spacer_1
-    properties: {height: 32}
-    type: Spacer
-    layout_properties: {grid_position: 'BZYILE,ZIUIYN KQJTUH,KMRKHG'}
-  - name: label_7
-    properties: {text: 'ACT:'}
-    type: Label
-    layout_properties: {grid_position: 'BZYILE,ZIUIYN YWEKYG,CJAQTV'}
-  - name: act_box
-    properties: {type: number}
-    type: TextBox
-    layout_properties: {grid_position: 'BZYILE,ZIUIYN YWEKYG,RHUULW'}
-    data_bindings:
-    - {property: text, code: 'self.item[''act'']', writeback: false}
-  - name: act_check_box
-    properties: {text: Include Score}
-    type: CheckBox
-    layout_properties: {grid_position: 'BZYILE,ZIUIYN YWEKYG,KWCWUS'}
-  - name: label_8
-    properties: {text: 'SAT:'}
-    type: Label
-    layout_properties: {grid_position: 'BZYILE,ZIUIYN OPQJQY,SLUHQO'}
-  - name: sat_box
-    properties: {type: number}
-    type: TextBox
-    layout_properties: {grid_position: 'BZYILE,ZIUIYN OPQJQY,ZQPESG'}
-    data_bindings:
-    - {property: text, code: 'self.item[''sat'']', writeback: false}
-  - name: sat_check_box
-    properties: {text: Include Score}
-    type: CheckBox
-    layout_properties: {grid_position: 'BZYILE,ZIUIYN OPQJQY,LTBWFW'}
-  - name: profile_image
-    properties: {height: '125'}
-    type: Image
-    layout_properties: {grid_position: 'BZYILE,ZSDTSJ QTNRIZ,UATTTG'}
-    data_bindings: []
-  - name: profile_image_load
-    properties: {text: profile Image}
-    type: FileLoader
-    layout_properties: {grid_position: 'BZYILE,ZSDTSJ KCDAZN,PZFZBA'}
-    event_bindings: {change: profile_image_load_change}
-  - name: project_image
-    properties: {height: '125'}
-    type: Image
-    layout_properties: {grid_position: 'BZYILE,QHWJZW LLGLGL,WDXDXC'}
-  - name: project_image_load
-    properties: {text: Project Image}
-    type: FileLoader
-    layout_properties: {grid_position: 'BZYILE,QHWJZW QOFELI,JVPEEM'}
-    event_bindings: {change: project_image_load_change}
-  - name: label_1
-    properties: {text: 'About Me:'}
-    type: Label
-    layout_properties: {grid_position: 'BURVPT,ZKUSVL BPDZOC,YOUETY'}
-  - name: about_box
-    properties: {height: '134'}
-    type: TextArea
-    layout_properties: {grid_position: 'BURVPT,ZKUSVL FJAGUC,VHMWBR'}
-    data_bindings:
-    - {property: text, code: 'self.item[''about'']', writeback: false}
-  - name: label_11
-    properties: {text: 'Project Title:'}
-    type: Label
-    layout_properties: {grid_position: 'BURVPT,XOUKBA ANCXTV,GTUQGU'}
-  - name: title_box
-    properties: {}
-    type: TextBox
-    layout_properties: {grid_position: 'BURVPT,XOUKBA ANCXTV,ONVSRH'}
-    data_bindings:
-    - {property: text, code: 'self.item[''project_title'']', writeback: false}
-  - name: project_description
-    properties: {height: '125'}
-    type: TextArea
-    layout_properties: {grid_position: 'BURVPT,XOUKBA VCFMYM,KJZWRC'}
-    data_bindings:
-    - {property: text, code: 'self.item[''project_desc'']', writeback: false}
-  - name: cancel_button
-    properties: {text: Cancel, role: filled-button}
-    type: Button
-    layout_properties: {grid_position: 'LCNMJQ,OZKPZP'}
-    event_bindings: {click: cancel_button_click}
-  - name: save_button
-    properties: {text: Save, role: filled-button}
-    type: Button
-    layout_properties: {grid_position: 'LCNMJQ,UZDSZH'}
-    event_bindings: {click: save_button_click}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'OUTOAJ,MNJMWX'}
+    components:
+    - name: spacer_3
+      properties: {height: 129.73593139648438}
+      type: Spacer
+      layout_properties: {grid_position: 'KKDHCG,AHBQFY'}
+    - name: cancel_button
+      properties: {text: Cancel, role: filled-button}
+      type: Button
+      layout_properties: {grid_position: 'ZMILUG,HEPXYR'}
+      event_bindings: {click: cancel_button_click}
+    - name: save_button
+      properties: {text: Save, role: filled-button}
+      type: Button
+      layout_properties: {grid_position: 'ZMILUG,MFOPHI'}
+      event_bindings: {click: save_button_click}
 is_package: true

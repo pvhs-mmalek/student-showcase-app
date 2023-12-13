@@ -2,6 +2,10 @@
  This CSS implements the Material Design 3 look and feel for Anvil apps.
  **/
 
+textarea {
+    resize: none;
+}
+
 /* Stop panel-cols cutting off drop shadows */
 .anvil-panel-col {
   padding-bottom: 10px;

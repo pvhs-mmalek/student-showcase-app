@@ -3,7 +3,7 @@ container:
   properties: {col_widths: '{}'}
 components:
 - name: content_panel
-  properties: {col_widths: '{}', col_spacing: medium, role: elevated-card}
+  properties: {col_widths: '{"AQKMLS":25,"UTQMCA":35}', col_spacing: medium, role: elevated-card}
   type: ColumnPanel
   layout_properties: {grid_position: 'HIACFT,WENVIK'}
   components:
@@ -13,7 +13,7 @@ components:
     layout_properties: {grid_position: 'KNWRGO,AMOYXW'}
     components:
     - name: profile_image
-      properties: {height: '125'}
+      properties: {height: '125', border: solid}
       type: Image
       layout_properties: {grid_position: 'NUJUNG,XFARFG'}
     - name: label_2
@@ -121,13 +121,13 @@ components:
       type: Label
       layout_properties: {grid_position: 'RXEERA,XPLNUH'}
     - name: about_box
-      properties: {height: '125'}
+      properties: {height: '125', role: outlined, enabled: false}
       type: TextArea
       layout_properties: {grid_position: 'NJWHYE,ELNYOU'}
       data_bindings:
       - {property: text, code: 'self.item[''about'']', writeback: false}
   - name: column_panel_4
-    properties: {col_widths: '{"VSXULG":25,"IJGSEJ":35}'}
+    properties: {col_widths: '{"VSXULG":20,"IJGSEJ":40}'}
     type: ColumnPanel
     layout_properties: {grid_position: 'VZBACM,UTQMCA'}
     components:
@@ -138,11 +138,11 @@ components:
       data_bindings:
       - {property: text, code: 'self.item[''project_title'']', writeback: false}
     - name: project_image
-      properties: {height: '125'}
+      properties: {height: '125', border: solid}
       type: Image
       layout_properties: {grid_position: 'ITQMSM,VSXULG'}
     - name: project_description
-      properties: {height: '125'}
+      properties: {height: '125', role: outlined, enabled: false}
       type: TextArea
       layout_properties: {grid_position: 'ITQMSM,IJGSEJ'}
       data_bindings:

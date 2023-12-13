@@ -1,12 +1,16 @@
 container: {type: ColumnPanel}
 components:
+- name: spacer_1
+  properties: {height: 10.3836669921875}
+  type: Spacer
+  layout_properties: {grid_position: 'POUVCS,HUTMDD'}
 - name: content_panel
   properties: {}
   type: ColumnPanel
   layout_properties: {grid_position: 'MSYKAJ,SYPLQB'}
   components:
   - name: edit_profile_button
-    properties: {text: Edit Profile}
+    properties: {text: Edit Profile, role: elevated-button, border: ''}
     type: Button
     layout_properties: {grid_position: 'SVPRAQ,DCIJYV'}
     event_bindings: {click: edit_profile_button_click}

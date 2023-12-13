@@ -1,7 +1,11 @@
 container: {type: ColumnPanel}
 components:
+- name: spacer_1
+  properties: {height: 10.3836669921875}
+  type: Spacer
+  layout_properties: {grid_position: 'KFNRCL,CIVWCT'}
 - name: new_project_button
-  properties: {text: New Project}
+  properties: {text: New Project, role: outlined-button}
   type: Button
   layout_properties: {grid_position: 'EYXHJZ,OAKGZC'}
   event_bindings: {click: new_project_button_click}
