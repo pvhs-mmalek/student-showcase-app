@@ -6,6 +6,8 @@ textarea {
     resize: none;
 }
 
+
+
 /* Stop panel-cols cutting off drop shadows */
 .anvil-panel-col {
   padding-bottom: 10px;
@@ -851,9 +853,10 @@ input.anvil-component[disabled], .anvil-component select[disabled], .anvil-datep
 textarea.anvil-component.anvil-role-input-error[disabled], input.anvil-component.anvil-role-input-error[disabled], 
 .anvil-component.anvil-role-input-error select[disabled], .anvil-datepicker.anvil-role-input-error input[disabled] {
   background-color: %color:Dark Overlay 1%;
-  color: %color:On Disabled%;
+
   border-bottom: 1px solid %color:On Disabled%;
   padding-bottom: 8px;
+  cursor: auto;
 }
 
 .anvil-component select:hover, .anvil-component select:focus {
@@ -890,7 +893,7 @@ textarea.anvil-component.anvil-role-outlined[disabled], input.anvil-component.an
 textarea.anvil-component.anvil-role-outlined-error[disabled], input.anvil-component.anvil-role-outlined-error[disabled], 
 .anvil-component.anvil-role-outlined-error select[disabled], .anvil-datepicker.anvil-role-outlined-error input[disabled] {
   border: 1px solid %color:On Disabled%;
-  color: %color:On Disabled%;
+
   padding-bottom: 8px;
 }
 
@@ -963,7 +966,7 @@ textarea.anvil-component.anvil-role-input-error, input.anvil-component.anvil-rol
 
 input[disabled] ~ span {
   cursor: not-allowed;
-  color: %color:On Disabled%;
+
 }
 
 .checkbox input, .radio input {
@@ -1044,3 +1047,10 @@ div.plot-container.plotly svg.main-svg {
 .anvil-spinner {
     --anvil-spinner-bg: %color:Surface Variant%;
 }
+
+.textarea.anvil-component[disabled] {
+  color: #000000 !important;
+  background-color:#FFF !important;
+}
+
+

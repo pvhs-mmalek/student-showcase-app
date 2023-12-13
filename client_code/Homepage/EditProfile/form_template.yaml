@@ -90,7 +90,7 @@ components:
       data_bindings:
       - {property: text, code: 'self.item[''grade'']', writeback: false}
   - name: column_panel_3
-    properties: {col_widths: '{"ARZTFD":10,"ADGIZF":25,"ILIJJO":25,"VCFFML":10,"EYATCH":25,"UNEERZ":25,"TPMFIE":10,"EYUBNL":25,"YBBXTM":25}'}
+    properties: {col_widths: '{"ARZTFD":10,"ADGIZF":25,"ILIJJO":25,"VCFFML":10,"EYATCH":25,"TPMFIE":10,"EYUBNL":25}'}
     type: ColumnPanel
     layout_properties: {grid_position: 'UPMKYV,UVRENU'}
     components:
@@ -108,10 +108,6 @@ components:
       layout_properties: {grid_position: 'ZYYDLK,ADGIZF'}
       data_bindings:
       - {property: text, code: 'self.item[''gpa'']', writeback: false}
-    - name: spacer_1
-      properties: {height: 32}
-      type: Spacer
-      layout_properties: {grid_position: 'ZYYDLK,ILIJJO'}
     - name: label_7
       properties: {text: 'ACT:'}
       type: Label
@@ -122,10 +118,6 @@ components:
       layout_properties: {grid_position: 'YBAEWV,EYATCH'}
       data_bindings:
       - {property: text, code: 'self.item[''act'']', writeback: false}
-    - name: act_check_box
-      properties: {text: Include Score}
-      type: CheckBox
-      layout_properties: {grid_position: 'YBAEWV,UNEERZ'}
     - name: label_8
       properties: {text: 'SAT:'}
       type: Label
@@ -136,10 +128,6 @@ components:
       layout_properties: {grid_position: 'REHMCB,EYUBNL'}
       data_bindings:
       - {property: text, code: 'self.item[''sat'']', writeback: false}
-    - name: sat_check_box
-      properties: {text: Include Score}
-      type: CheckBox
-      layout_properties: {grid_position: 'REHMCB,YBBXTM'}
   - name: column_panel_4
     properties: {col_widths: '{"HITYHR":20,"WWIQPB":40,"KBUIDY":10,"ULIOMV":50}'}
     type: ColumnPanel

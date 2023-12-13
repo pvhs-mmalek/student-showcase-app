@@ -179,14 +179,15 @@ def advanced_profile_search(search_dict):
   if not search_dict['min_grade_check']:
     search_dict['min_grade'] = 9
 
+  
   result = [
     profile for profile in result
-    if (profile['act']>=search_dict['min_act'] and profile['act']<=search_dict['max_act'])
-    and (profile['gpa']>=search_dict['min_gpa'] and profile['gpa']<=search_dict['max_gpa'])
-    and (profile['sat']>=search_dict['min_sat'] and profile['sat']<=search_dict['max_sat'])
-    and (profile['grade']>=search_dict['min_grade'] and profile['grade']<=search_dict['max_grade'])
-    and ((not search_dict['location_check']) or (search_dict['location_check'] and (search_dict['location'] == profile['location'])))
-    and ((not search_dict['school_check']) or (search_dict['school_check'] and (search_dict['school'] == profile['school'])))
+    if (profile['act'] != None and profile['act']>=search_dict['min_act'] and profile['act']<=search_dict['max_act'])
+    and (profile['gpa'] != None and profile['gpa']>=search_dict['min_gpa'] and profile['gpa']<=search_dict['max_gpa'])
+    and (profile['sat'] != None and profile['sat']>=search_dict['min_sat'] and profile['sat']<=search_dict['max_sat'])
+    and (profile['grade'] != None and profile['grade']>=search_dict['min_grade'] and profile['grade']<=search_dict['max_grade'])
+    and (profile['location'] != None and ((not search_dict['location_check']) or (search_dict['location_check'] and (search_dict['location'] == profile['location']))))
+    and (profile['location'] != None and ((not search_dict['school_check']) or (search_dict['school_check'] and (search_dict['school'] == profile['school']))))
   ]
   return result
 

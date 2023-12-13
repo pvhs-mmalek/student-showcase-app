@@ -36,10 +36,8 @@ class EditProfile(EditProfileTemplate):
     profile_dict['school'] = self.school_box.text
     profile_dict['grade'] = self.grade_box.text
     profile_dict['gpa'] = self.gpa_box.text
-    if self.act_check_box.checked:
-      profile_dict['act'] = self.act_box.text
-    if self.sat_check_box.checked:
-      profile_dict['sat'] = self.sat_box.text
+    profile_dict['act'] = self.act_box.text
+    profile_dict['sat'] = self.sat_box.text
     profile_dict['about'] = self.about_box.text
     profile_dict['project_title'] = self.title_box.text
     profile_dict['project_desc'] = self.project_description.text

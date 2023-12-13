@@ -6,7 +6,8 @@ components:
   layout_properties: {grid_position: 'HQNXOU,YUIYKR'}
   components:
   - name: column_panel_2
-    properties: {col_widths: '{"UZIPWI":15,"QXBUCL":30,"UNGYMI":15}', border: solid thin}
+    properties: {col_widths: '{"UZIPWI":15,"QXBUCL":30,"UNGYMI":15}', border: '',
+      role: null}
     type: ColumnPanel
     layout_properties: {grid_position: 'DRWUWT,POHAEK'}
     components:
