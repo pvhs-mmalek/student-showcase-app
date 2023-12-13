@@ -3,147 +3,150 @@ container:
   properties: {col_widths: '{}'}
 components:
 - name: content_panel
-  properties: {col_widths: '{"NBDSUP":15,"NNDNBW":18,"FNTQGE":20,"HJOUQQ":40,"MRQQSD":20,"WWDLKN":40,"ZBLGVU":15,"LLINUK":35,"WRJKAD":42,"CBYMHP":10,"WXYWEZ":50,"GYXIMH":10,"VZLOIU":50,"VYYQTG":10,"PQBNOI":50,"RSNOUN":20,"UJEMSK":40,"QCKFSC":20,"HLVPAY":40,"KKNCTP":20,"JGCEFN":40,"FLRLQJ":20,"BINHPC":40,"JSJCGY":40,"KGHRIU":15,"ZAQDSN":45,"UQZLQQ":5,"VEIYDE":8,"UYOWCG":2,"AHWOLC":2}',
-    col_spacing: medium, role: elevated-card}
+  properties: {col_widths: '{}', col_spacing: medium, role: elevated-card}
   type: ColumnPanel
-  layout_properties: {grid_position: 'THLSNK,CARSFU'}
+  layout_properties: {grid_position: 'HIACFT,WENVIK'}
   components:
-  - name: profile_image
-    properties: {height: '125'}
-    type: Image
-    layout_properties: {grid_position: 'ASIUBA,ZBLGVU'}
-  - name: spacer_5
-    properties: {height: 32}
-    type: Spacer
-    layout_properties: {grid_position: 'ASIUBA,AHWOLC'}
-  - name: spacer_3
-    properties: {height: 32}
-    type: Spacer
-    layout_properties: {grid_position: 'ASIUBA,VEIYDE'}
-  - name: label_2
-    properties: {text: 'Name:'}
-    type: Label
-    layout_properties: {grid_position: 'ASIUBA,LLINUK LAGQFT,VYYQTG'}
-  - name: name_box
-    properties: {text: ''}
-    type: Label
-    layout_properties: {grid_position: 'ASIUBA,LLINUK LAGQFT,PQBNOI'}
-    data_bindings:
-    - {property: text, code: 'self.item[''name'']', writeback: false}
-  - name: label_3
-    properties: {text: 'Age:'}
-    type: Label
-    layout_properties: {grid_position: 'ASIUBA,LLINUK RWLXCF,GYXIMH'}
-  - name: age_box
+  - name: column_panel_1
+    properties: {col_widths: '{"XFARFG":25,"VBHMXQ":35,"HVGPNQ":15,"DOSCNE":45,"SLKZBE":15,"PCAUTQ":45,"KKIKFZ":15,"YIVOBY":45}'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'KNWRGO,AMOYXW'}
+    components:
+    - name: profile_image
+      properties: {height: '125'}
+      type: Image
+      layout_properties: {grid_position: 'NUJUNG,XFARFG'}
+    - name: label_2
+      properties: {text: 'Name:'}
+      type: Label
+      layout_properties: {grid_position: 'NUJUNG,VBHMXQ SRGXWE,HVGPNQ'}
+    - name: name_box
+      properties: {text: ''}
+      type: Label
+      layout_properties: {grid_position: 'NUJUNG,VBHMXQ SRGXWE,DOSCNE'}
+      data_bindings:
+      - {property: text, code: 'self.item[''name'']', writeback: false}
+    - name: label_3
+      properties: {text: 'Age:'}
+      type: Label
+      layout_properties: {grid_position: 'NUJUNG,VBHMXQ MPPMGU,SLKZBE'}
+    - name: age_box
+      properties: {}
+      type: Label
+      layout_properties: {grid_position: 'NUJUNG,VBHMXQ MPPMGU,PCAUTQ'}
+      data_bindings:
+      - {property: text, code: 'self.item[''age'']', writeback: false}
+    - name: label_4
+      properties: {text: 'Sex:', italic: false}
+      type: Label
+      layout_properties: {grid_position: 'NUJUNG,VBHMXQ MMKJOL,KKIKFZ'}
+    - name: sex_box
+      properties: {}
+      type: Label
+      layout_properties: {grid_position: 'NUJUNG,VBHMXQ MMKJOL,YIVOBY'}
+      data_bindings:
+      - {property: text, code: 'self.item[''sex'']', writeback: false}
+  - name: column_panel_3
+    properties: {col_widths: '{"LBPNPG":10,"WURGVD":25,"CSMSRW":10,"ADVSVI":15,"WLGXEP":10,"JEGCQX":25,"DBWCMV":10,"QIBMGC":15,"XSDZYL":10,"FIRKDF":25,"TIHOPR":10,"OWSGJR":15}'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'KNWRGO,SDQNXJ'}
+    components:
+    - name: label_5
+      properties: {text: 'Location:'}
+      type: Label
+      layout_properties: {grid_position: 'GOZMDQ,LBPNPG'}
+    - name: location_box
+      properties: {}
+      type: Label
+      layout_properties: {grid_position: 'GOZMDQ,WURGVD'}
+      data_bindings:
+      - {property: text, code: 'self.item[''location'']', writeback: false}
+    - name: label_8
+      properties: {text: 'GPA:'}
+      type: Label
+      layout_properties: {grid_position: 'GOZMDQ,CSMSRW'}
+    - name: gpa_box
+      properties: {}
+      type: Label
+      layout_properties: {grid_position: 'GOZMDQ,ADVSVI'}
+      data_bindings:
+      - {property: text, code: 'self.item[''gpa'']', writeback: false}
+    - name: label_6
+      properties: {text: 'School:'}
+      type: Label
+      layout_properties: {grid_position: 'WMSPGF,WLGXEP'}
+    - name: school_box
+      properties: {}
+      type: Label
+      layout_properties: {grid_position: 'WMSPGF,JEGCQX'}
+      data_bindings:
+      - {property: text, code: 'self.item[''school'']', writeback: false}
+    - name: label_9
+      properties: {text: 'ACT:'}
+      type: Label
+      layout_properties: {grid_position: 'WMSPGF,DBWCMV'}
+    - name: act_box
+      properties: {}
+      type: Label
+      layout_properties: {grid_position: 'WMSPGF,QIBMGC'}
+      data_bindings:
+      - {property: text, code: 'self.item[''act'']', writeback: false}
+    - name: label_7
+      properties: {text: 'Grade:'}
+      type: Label
+      layout_properties: {grid_position: 'RULQEL,XSDZYL'}
+    - name: grade_box
+      properties: {}
+      type: Label
+      layout_properties: {grid_position: 'RULQEL,FIRKDF'}
+      data_bindings:
+      - {property: text, code: 'self.item[''grade'']', writeback: false}
+    - name: label_10
+      properties: {text: 'SAT:'}
+      type: Label
+      layout_properties: {grid_position: 'IYXFCR,LTBBAG RULQEL,TIHOPR'}
+    - name: sat_box
+      properties: {}
+      type: Label
+      layout_properties: {grid_position: 'RULQEL,OWSGJR'}
+      data_bindings:
+      - {property: text, code: 'self.item[''sat'']', writeback: false}
+  - name: column_panel_2
     properties: {}
-    type: Label
-    layout_properties: {grid_position: 'ASIUBA,LLINUK RWLXCF,VZLOIU'}
-    data_bindings:
-    - {property: text, code: 'self.item[''age'']', writeback: false}
-  - name: label_4
-    properties: {text: 'Sex:', italic: false}
-    type: Label
-    layout_properties: {grid_position: 'ASIUBA,LLINUK YGIGBM,CBYMHP'}
-  - name: sex_box
-    properties: {}
-    type: Label
-    layout_properties: {grid_position: 'ASIUBA,LLINUK YGIGBM,WXYWEZ'}
-    data_bindings:
-    - {property: text, code: 'self.item[''sex'']', writeback: false}
-  - name: spacer_2
-    properties: {height: 32}
-    type: Spacer
-    layout_properties: {grid_position: 'ASIUBA,UQZLQQ'}
-  - name: label_1
-    properties: {text: 'About Me:'}
-    type: Label
-    layout_properties: {grid_position: 'ASIUBA,WRJKAD IQVSLZ,YHGEGM'}
-  - name: about_box
-    properties: {height: '125'}
-    type: TextArea
-    layout_properties: {grid_position: 'ASIUBA,WRJKAD QVBUTK,GVJAGS'}
-    data_bindings:
-    - {property: text, code: 'self.item[''about'']', writeback: false}
-  - name: label_5
-    properties: {text: 'Location:'}
-    type: Label
-    layout_properties: {grid_position: 'APGIFV,NBDSUP MJXYBR,MRQQSD'}
-  - name: location_box
-    properties: {}
-    type: Label
-    layout_properties: {grid_position: 'APGIFV,NBDSUP MJXYBR,WWDLKN'}
-    data_bindings:
-    - {property: text, code: 'self.item[''location'']', writeback: false}
-  - name: label_6
-    properties: {text: 'School:'}
-    type: Label
-    layout_properties: {grid_position: 'APGIFV,NBDSUP OLKISF,FNTQGE'}
-  - name: school_box
-    properties: {}
-    type: Label
-    layout_properties: {grid_position: 'APGIFV,NBDSUP OLKISF,HJOUQQ'}
-    data_bindings:
-    - {property: text, code: 'self.item[''school'']', writeback: false}
-  - name: label_7
-    properties: {text: 'Grade:'}
-    type: Label
-    layout_properties: {grid_position: 'APGIFV,NBDSUP HQEGIH,RSNOUN'}
-  - name: grade_box
-    properties: {}
-    type: Label
-    layout_properties: {grid_position: 'APGIFV,NBDSUP HQEGIH,UJEMSK'}
-    data_bindings:
-    - {property: text, code: 'self.item[''grade'']', writeback: false}
-  - name: spacer_4
-    properties: {height: 32}
-    type: Spacer
-    layout_properties: {grid_position: 'APGIFV,UYOWCG'}
-  - name: label_8
-    properties: {text: 'GPA:'}
-    type: Label
-    layout_properties: {grid_position: 'APGIFV,NNDNBW VDZQNL,QCKFSC'}
-  - name: gpa_box
-    properties: {}
-    type: Label
-    layout_properties: {grid_position: 'APGIFV,NNDNBW VDZQNL,HLVPAY'}
-    data_bindings:
-    - {property: text, code: 'self.item[''gpa'']', writeback: false}
-  - name: label_9
-    properties: {text: 'ACT:'}
-    type: Label
-    layout_properties: {grid_position: 'APGIFV,NNDNBW YRMNBC,KKNCTP'}
-  - name: act_box
-    properties: {}
-    type: Label
-    layout_properties: {grid_position: 'APGIFV,NNDNBW YRMNBC,JGCEFN'}
-    data_bindings:
-    - {property: text, code: 'self.item[''act'']', writeback: false}
-  - name: label_10
-    properties: {text: 'SAT:'}
-    type: Label
-    layout_properties: {grid_position: 'APGIFV,NNDNBW EMBTES,FLRLQJ'}
-  - name: sat_box
-    properties: {}
-    type: Label
-    layout_properties: {grid_position: 'APGIFV,NNDNBW EMBTES,BINHPC'}
-    data_bindings:
-    - {property: text, code: 'self.item[''sat'']', writeback: false}
-  - name: title_box
-    properties: {}
-    type: Label
-    layout_properties: {grid_position: 'APGIFV,JSJCGY JGSNEU,YCXMGM'}
-    data_bindings:
-    - {property: text, code: 'self.item[''project_title'']', writeback: false}
-  - name: project_image
-    properties: {height: '125'}
-    type: Image
-    layout_properties: {grid_position: 'APGIFV,JSJCGY ZGOXHC,KGHRIU'}
-  - name: project_description
-    properties: {height: '125'}
-    type: TextArea
-    layout_properties: {grid_position: 'APGIFV,JSJCGY ZGOXHC,ZAQDSN'}
-    data_bindings:
-    - {property: text, code: 'self.item[''project_desc'']', writeback: false}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'VZBACM,AQKMLS'}
+    components:
+    - name: label_1
+      properties: {text: 'About Me:'}
+      type: Label
+      layout_properties: {grid_position: 'RXEERA,XPLNUH'}
+    - name: about_box
+      properties: {height: '125'}
+      type: TextArea
+      layout_properties: {grid_position: 'NJWHYE,ELNYOU'}
+      data_bindings:
+      - {property: text, code: 'self.item[''about'']', writeback: false}
+  - name: column_panel_4
+    properties: {col_widths: '{"VSXULG":25,"IJGSEJ":35}'}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'VZBACM,UTQMCA'}
+    components:
+    - name: title_box
+      properties: {}
+      type: Label
+      layout_properties: {grid_position: 'RANJYN,OTAVEN'}
+      data_bindings:
+      - {property: text, code: 'self.item[''project_title'']', writeback: false}
+    - name: project_image
+      properties: {height: '125'}
+      type: Image
+      layout_properties: {grid_position: 'ITQMSM,VSXULG'}
+    - name: project_description
+      properties: {height: '125'}
+      type: TextArea
+      layout_properties: {grid_position: 'ITQMSM,IJGSEJ'}
+      data_bindings:
+      - {property: text, code: 'self.item[''project_desc'']', writeback: false}
   - name: email_box
     properties: {}
     type: Label

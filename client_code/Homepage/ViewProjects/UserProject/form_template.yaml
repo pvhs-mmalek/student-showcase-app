@@ -6,13 +6,13 @@ components:
   layout_properties: {grid_position: 'AYWOUG,OAORLQ'}
   components:
   - name: title_box
-    properties: {}
+    properties: {role: title, border: ''}
     type: Label
     layout_properties: {grid_position: 'ZOYIZV,MIKKGF'}
     data_bindings:
     - {property: text, code: 'self.item[''title'']', writeback: false}
   - name: description_box
-    properties: {enabled: false}
+    properties: {enabled: false, role: outlined}
     type: TextArea
     layout_properties: {grid_position: 'YJYOTY,GEIPDC'}
     data_bindings:
