@@ -30,6 +30,8 @@ class Homepage(HomepageTemplate):
     anvil.users.logout()
     anvil.users.login_with_form()
     anvil.server.call('check_new_user')
+    self.search_profiles_button.raise_event('click')
+    
 
   def own_projects_button_click(self, **event_args):
     """This method is called when the link is clicked"""

@@ -888,7 +888,7 @@ input.anvil-component.anvil-role-outlined-error:hover, input.anvil-component.anv
   padding-bottom: 6px;
 }
 
-textarea.anvil-component.anvil-role-outlined[disabled], input.anvil-component.anvil-role-outlined[disabled], 
+input.anvil-component.anvil-role-outlined[disabled], 
 .anvil-component.anvil-role-outlined select[disabled], .anvil-datepicker.anvil-role-outlined input[disabled], 
 textarea.anvil-component.anvil-role-outlined-error[disabled], input.anvil-component.anvil-role-outlined-error[disabled], 
 .anvil-component.anvil-role-outlined-error select[disabled], .anvil-datepicker.anvil-role-outlined-error input[disabled] {
@@ -896,6 +896,8 @@ textarea.anvil-component.anvil-role-outlined-error[disabled], input.anvil-compon
 
   padding-bottom: 8px;
 }
+
+
 
 .daterangepicker td.active {
   background: %color:Primary%;
